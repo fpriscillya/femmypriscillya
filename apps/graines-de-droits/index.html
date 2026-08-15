@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Graines de droits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="icon" href="./assets/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <nav class="global-nav">
+          <button class="global-btn active" data-screen="home">Accueil</button>
+          <button class="global-btn" data-screen="eleves">Élèves</button>
+          <button class="global-btn" data-screen="enseignants">
+            Enseignants
+          </button>
+          <button class="global-btn" data-screen="parents">Parents</button>
+          <button class="global-btn" data-screen="parents-enseignants">
+            Parents-enseignants
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <!-- ACCUEIL -->
+        <section id="home" class="screen active">
+          <div class="home-grid">
+            <div class="role-card" data-screen="eleves">
+              <div class="role-icon">
+                <img src="assets/icon-eleve.png" alt="Élève" />
+              </div>
+              <div class="role-title">Élève</div>
+              <div class="role-sub">
+                Tableau de bord, histoires interactives, carnet de bord, espace
+                zen et Altero.
+              </div>
+            </div>
+            <div class="role-card" data-screen="enseignants">
+              <div class="role-icon">
+                <img src="assets/icon-enseignant.png" alt="Enseignant·e" />
+              </div>
+              <div class="role-title">Enseignant·e</div>
+              <div class="role-sub">
+                Formation, activités, suivi des missions et forum.
+              </div>
+            </div>
+            <div class="role-card" data-screen="parents">
+              <div class="role-icon">
+                <img src="assets/icon-parents.png" alt="Parents" />
+              </div>
+              <div class="role-title">Parents</div>
+              <div class="role-sub">
+                Droit de la semaine, défis maison, forum et ressources.
+              </div>
+            </div>
+            <div class="role-card" data-screen="parents-enseignants">
+              <div class="role-icon">
+                <img
+                  src="assets/icon-direction.png"
+                  alt="Parents-enseignants"
+                />
+              </div>
+              <div class="role-title">Parents-enseignants</div>
+              <div class="role-sub">
+                Ressources croisées CPS-droits et forum école-famille.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="logo" onclick="showScreen('home')" style="cursor: pointer">
+          <img
+            src="./assets/logo.png"
+            alt="Graines de droits"
+            class="logo-img"
+          />
+          <p>
+            <strong>
+              Un environnement commun où chacun·e fait pousser les droits de
+              l’enfant.
+            </strong>
+          </p>
+        </div>
+
+        <!-- ESPACE ÉLÈVES -->
+        <section id="eleves" class="screen">
+          <div class="space-header">
+            <div>
+              <div class="space-title">Espace Élèves</div>
+              <div class="space-badge">
+                Mon parcours, mes droits, mes émotions
+              </div>
+            </div>
+            <div class="subnav" id="eleves-subnav">
+              <button
+                class="subnav-btn active"
+                data-subscreen="eleves-dashboard"
+              >
+                <img src="./assets/dashboard.png" alt="Dashboard" />
+                <span class="icon-label">Tableau de Bord</span>
+              </button>
+
+              <button class="subnav-btn" data-subscreen="eleves-missions">
+                <img src="./assets/missions.png" alt="Missions" />
+                <span class="icon-label">Ma mission</span>
+              </button>
+
+              <button class="subnav-btn" data-subscreen="eleves-histoires">
+                <img src="./assets/histoires.png" alt="Histoires" />
+                <span class="icon-label">Histoires</span>
+              </button>
+
+              <button class="subnav-btn" data-subscreen="eleves-bd">
+                <img src="./assets/icon-bd.png" alt="BD" />
+                <span class="icon-label">BD</span>
+              </button>
+
+              <button class="subnav-btn" data-subscreen="eleves-journal">
+                <img src="./assets/journal.png" alt="Journal" />
+                <span class="icon-label">Journal</span>
+              </button>
+
+              <button class="subnav-btn" data-subscreen="eleves-zen">
+                <img src="./assets/zen.png" alt="Zen" />
+                <span class="icon-label">Espace Zen</span>
+              </button>
+
+              <button class="subnav-btn" data-subscreen="eleves-altero">
+                <img src="./assets/altero.png" alt="Altero" />
+                <span class="icon-label">Mon Altero</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- sous-écran : tableau de bord -->
+          <div id="eleves-dashboard" class="subscreen active">
+            <div class="grid">
+              <!-- LEFT CARD: Profile + Progress + Mission -->
+              <div class="card">
+                <div class="card-header">
+                  <h3>Mon tableau de bord</h3>
+                  <span class="tag">Semaine 1</span>
+                </div>
+
+                <!-- Profile Section -->
+                <div class="profile-section">
+                  <div class="avatar-row">
+                    <div class="avatar-img polaroid">
+                      <img src="./assets/Profile.png" alt="avatar" />
+                    </div>
+                    <div class="profile-text">
+                      <strong>Mon Profil</strong>
+                      <div id="profileDescription">
+                        Salut ! Moi c’est Clara. J’adore dessiner des créatures
+                        imaginaires (surtout mon Altero), lire des BD et faire
+                        du roller avec mes amis. À l’école, j’aime les sciences
+                        et l’art, mais je suis un peu timide quand je dois
+                        parler devant toute la classe. J’essaie d’apprendre à
+                        mieux gérer mon stress et à dire ce que je pense sans
+                        peur. Mon objectif cette année : avoir plus confiance en
+                        moi et régler les conflits sans me fâcher.
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn-primary" id="editProfileBtn">
+                    Modifier mon profil
+                  </button>
+                </div>
+
+                <!-- Profile Editor (hidden initially) -->
+                <div class="profile-editor hidden">
+                  <textarea id="profileInput"></textarea>
+                  <button class="btn-primary" id="saveProfileBtn">
+                    Enregistrer
+                  </button>
+                  <button class="btn-ghost" id="cancelProfileBtn">
+                    Annuler
+                  </button>
+                </div>
+
+                <!-- Highlight of the week -->
+                <div class="highlight-week">
+                  <strong>Salut, Clara !</strong><br />
+                  Cette semaine, tu explores le
+                  <strong>droit d’être entendu</strong> et la compétence
+                  <strong>“écouter avant de répondre”.</strong>
+                </div>
+
+                <!-- Progress Sections -->
+
+                <div class="progress-section">
+                  <div class="progress-label">
+                    Compétences psychosociales (CPS)
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="cps-progress"></div>
+                  </div>
+                  <div class="progress-ticks">
+                    <span>1. Résolution</span><span>2. Créativité</span
+                    ><span>3. Communication</span><span>4. Empathie</span
+                    ><span>5. Régulation</span>
+                  </div>
+                </div>
+
+                <div class="progress-section">
+                  <div class="progress-label">Droits travaillés</div>
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      id="rights-progress"
+                      style="width: 20%"
+                    ></div>
+                  </div>
+                  <div class="progress-ticks">
+                    <span>Être entendu</span><span>Protection</span
+                    ><span>Jeu</span><span>Éducation</span
+                    ><span>Non-discrimination</span>
+                  </div>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="mission-card">
+                  <h3>Mission en cours</h3>
+                  <p>
+                    Cette semaine, propose une règle pour améliorer le respect
+                    dans la classe. Discute-la avec ton groupe.
+                  </p>
+                  <button class="btn-primary" id="btn-mission-week">
+                    ✅ Je l’ai fait
+                  </button>
+                </div>
+              </div>
+
+              <!-- RIGHT CARD: Badges -->
+              <div class="card">
+                <div class="card-header">
+                  <h3>Mes badges</h3>
+                  <span class="tag">Graines collectées</span>
+                </div>
+
+                <div class="badge-grid">
+                  <div class="badge-item badge-parler">
+                    <div class="badge-emoji">
+                      <img src="./assets/badge-parler.png" alt="Parler" />
+                    </div>
+                    <div>J’ai osé dire ce que je pense</div>
+                  </div>
+
+                  <div class="badge-item badge-conflit">
+                    <div class="badge-emoji">
+                      <img
+                        src="./assets/badge-conflit.png"
+                        alt="Résolution de conflit"
+                      />
+                    </div>
+                    <div>J’ai résolu un conflit</div>
+                  </div>
+
+                  <div class="badge-item badge-creative">
+                    <div class="badge-emoji">
+                      <img
+                        src="./assets/badge-creative.png"
+                        alt="Avoir une pensée critique"
+                      />
+                    </div>
+                    <div>J’ai trouvé une solution créative</div>
+                  </div>
+
+                  <div class="badge-item locked badge-emotion">
+                    <div class="badge-emoji">
+                      <img
+                        src="./assets/badge-emotion.png"
+                        alt="Comprendre l’émotion"
+                      />
+                    </div>
+                    <div>Je comprends l’émotion de l’autre</div>
+                  </div>
+
+                  <div class="badge-item locked badge-stress">
+                    <div class="badge-emoji">
+                      <img
+                        src="./assets/badge-stress.png"
+                        alt="Gérer le stress"
+                      />
+                    </div>
+                    <div>Je gère mon stress</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sous-écran : missions réelles -->
+          <div id="eleves-missions" class="subscreen">
+            <div class="missions-container">
+              <!-- LEFT BLOCK : PLOTS -->
+              <div class="missions-left">
+                <h3 class="period-title">Thèmes de mission</h3>
+                <p class="period-subtitle">
+                  Clique sur un terrain pour découvrir le thème de la quinzaine.
+                </p>
+
+                <div class="plots-grid">
+                  <img src="./assets/P1.png" class="plot-btn" data-period="1" />
+                  <img src="./assets/P2.png" class="plot-btn" data-period="2" />
+                  <img src="./assets/P3.png" class="plot-btn" data-period="3" />
+                  <img src="./assets/P4.png" class="plot-btn" data-period="4" />
+                  <img src="./assets/P5.png" class="plot-btn" data-period="5" />
+                </div>
+
+                <div id="periodInfo" class="period-info">
+                  <em>Choisis un terrain pour voir les informations.</em>
+                </div>
+              </div>
+
+              <!-- RIGHT BLOCK : MISSIONS -->
+              <div class="missions-right">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>Missions “Droits en action”</h3>
+                    <span class="tag">Classe & maison</span>
+                  </div>
+
+                  <p>
+                    Choisis une mission à réaliser cette semaine. Quand tu as
+                    terminé, clique sur <em>“Je l’ai fait”</em>. Ton
+                    enseignant·e pourra voir tes missions et laisser un
+                    commentaire.
+                  </p>
+
+                  <div class="mission-list" id="missionsList"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sous-écran : histoires interactives -->
+          <div id="eleves-histoires" class="subscreen">
+            <div class="card story-layout">
+              <div>
+                <div class="card-header">
+                  <h3>Mes histoires interactives</h3>
+                </div>
+
+                <div class="competence-chooser">
+                  <p class="competence-text">
+                    Je choisis ce que je veux travailler cette semaine :
+                  </p>
+                  <select id="competenceSelect">
+                    <option value="">
+                      Choisir une phrase qui me ressemble...
+                    </option>
+                    <option value="communication">
+                      Je suis timide et j’aimerais apprendre à m’exprimer devant
+                      les autres.
+                    </option>
+                    <option value="empathie">
+                      Je veux mieux remarquer quand quelqu’un est mis de côté.
+                    </option>
+                  </select>
+                  <button class="btn-primary" id="btnSuggestStory">
+                    Proposer une histoire
+                  </button>
+                  <p id="competenceSuggestionInfo" class="competence-info"></p>
+                </div>
+
+                <div class="episode-list" id="episodeList">
+                  <!-- rempli par JS -->
+                </div>
+              </div>
+              <div class="story-box" id="storyBox">
+                <div class="story-badges">
+                  <span class="story-badge" id="storyCpsBadge">CPS : -</span>
+                  <span class="story-badge" id="storyRightBadge"
+                    >Droit : -</span
+                  >
+                </div>
+                <div class="story-text" id="storyText">
+                  Choisis un épisode sur la gauche ou laisse le dispositif te
+                  proposer une histoire selon ce que tu veux travailler.
+                </div>
+                <div class="choice-list" id="choiceList"></div>
+                <div
+                  class="story-summary"
+                  id="storySummary"
+                  style="display: none"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sous-écran : BD réseaux sociaux / consentement -->
+          <div id="eleves-bd" class="subscreen">
+            <div class="card bd-layout">
+              <div class="card-header">
+                <h3>BD — Réseaux sociaux & respect en ligne</h3>
+                <span class="tag">Consentement & image numérique</span>
+              </div>
+
+              <p>
+                Lis la BD en cliquant sur les flèches. Elle raconte une histoire
+                où une photo est publiée sans demander l'accord de la personne
+                concernée.
+              </p>
+
+              <!-- SLIDESHOW BD -->
+              <div id="bdSlides" class="bd-slideshow">
+                <img
+                  id="bdImage"
+                  src="assets/images-bd/histoire-enfant-1.jpg"
+                  class="bd-image"
+                  alt="BD réseaux sociaux"
+                />
+              </div>
+
+              <div class="bd-controls">
+                <button id="bdPrev" class="btn-primary">⬅ Précédent</button>
+                <button id="bdNext" class="btn-primary">Suivant ➡</button>
+              </div>
+
+              <div id="bdCounter" class="bd-counter">1 / 17</div>
+
+              <p style="margin-top: 14px; font-size: 0.9rem">
+                La BD sert de point de départ pour discuter en classe :
+                <br />• du <strong>droit au respect de la vie privée</strong> et
+                à l'image, <br />• du <strong>consentement</strong> avant de
+                publier quelque chose, <br />• des
+                <strong>compétences psychosociales</strong> utiles pour réagir
+                (oser parler, dire non, demander de l'aide).
+              </p>
+
+              <!-- COLONNE DROITE : visuel BD + rappel droits/CPS -->
+              <div class="story-box">
+                <div class="story-badges">
+                  <span class="story-badge">
+                    Droit : vie privée & protection (art. 16, 19, 12)
+                  </span>
+                  <span class="story-badge">
+                    CPS : communication, gestion de conflit, affirmation de soi
+                  </span>
+                </div>
+
+                <div class="story-text">
+                  <p style="margin-bottom: 12px">
+                    En Suisse, l’âge légal pour accéder aux réseaux sociaux est
+                    fixé à 13 ans, mais ce thème reste essentiel à aborder, car
+                    les études (OFS, 2023) montrent que des enfants plus jeunes
+                    les utilisent déjà massivement.
+                  </p>
+
+                  <p style="font-size: 0.95rem">
+                    Après la lecture, l'enseignant·e peut animer une discussion
+                    :
+                    <br />• Que ressent l'élève sur la photo ? <br />• Qui
+                    aurait dû demander quoi ? <br />• Quelles solutions
+                    respectent les droits de chacun·e ?
+                  </p>
+
+                  <p style="font-size: 0.95rem; margin-top: 8px">
+                    Ensuite, les élèves peuvent écrire dans leur journal ou
+                    choisir une mission "Droits en action" en lien avec le
+                    numérique (par exemple : proposer une règle pour les photos
+                    et les réseaux sociaux dans la charte de classe).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- FERME card bd-layout -->
+          </div>
+          <!-- FERME subscreen eleves-bd -->
+
+          <!-- sous-écran : carnet de bord -->
+          <div id="eleves-journal" class="subscreen">
+            <div class="card journal-layout">
+              <div>
+                <div class="card-header">
+                  <h3>Timeline de mes séances</h3>
+                </div>
+                <div class="timeline-list" id="timelineList">
+                  <!-- JS -->
+                </div>
+              </div>
+              <div>
+                <div class="card-header">
+                  <h3>Mon journal de bord (privé)</h3>
+                </div>
+                <textarea
+                  id="journalText"
+                  placeholder="Aujourd’hui, j’ai eu un petit conflit avec... J’ai ressenti... La prochaine fois, j’aimerais..."
+                ></textarea>
+                <div class="alert-row">
+                  <button class="btn-alert" data-target="parent">
+                    Alerter un parent
+                  </button>
+                  <button class="btn-alert" data-target="enseignant">
+                    Alerter l’enseignant·e
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sous-écran : espace ZEN -->
+          <div id="eleves-zen" class="subscreen">
+            <div class="zen-layout">
+              <!-- 🌬️ BLOCK 1 — RESPIRATION GUIDÉE -->
+              <div class="zen-block card">
+                <div class="card-header">
+                  <h3>Respiration guidée</h3>
+                  <span class="tag">Pause douceur</span>
+                </div>
+
+                <p>
+                  Appuie sur “Lancer” et suis la bulle : elle grandit quand tu
+                  inspires, elle diminue quand tu expires.
+                </p>
+
+                <div class="breath-circle" id="breathCircle">Prêt·e ?</div>
+
+                <div class="center-buttons">
+                  <button class="btn-primary" id="btnBreath">Lancer</button>
+                  <button class="btn-ghost" id="btnBreathStop">Pause</button>
+                </div>
+
+                <p id="breathInstruction" class="breath-instruction"></p>
+              </div>
+
+              <!-- BLOCK 2 — BESOIN DU MOMENT -->
+              <div class="zen-block card">
+                <div class="card-header">
+                  <h3>Mon besoin du moment</h3>
+                  <span class="tag">Conscience de soi</span>
+                </div>
+
+                <p>Choisis ce dont tu as le plus besoin maintenant :</p>
+
+                <div class="mood-grid" id="moodRow">
+                  <div class="need" data-need="calme">J’ai besoin de calme</div>
+                  <div class="need" data-need="mouvement">
+                    J’ai besoin de mouvement
+                  </div>
+                  <div class="need" data-need="aide">J’ai besoin d’aide</div>
+                  <div class="need" data-need="parler">
+                    J’ai besoin de parler
+                  </div>
+                  <div class="need" data-need="pause">
+                    J’ai besoin d’une pause
+                  </div>
+                </div>
+
+                <p id="moodText" class="mood-description">
+                  Ton besoin et des idées d’actions s’afficheront ici.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- sous-écran : ALTERO -->
+          <div id="eleves-altero" class="subscreen">
+            <div class="grid">
+              <!-- LEFT CARD: CANVAS + TOOLS -->
+              <div class="card">
+                <div class="card-header">
+                  <h3>Créer ton Altero</h3>
+                  <span class="tag">Atelier créatif</span>
+                </div>
+
+                <div class="altero-editor">
+                  <!-- TOOLBAR -->
+                  <div class="toolbar">
+                    <button class="tool-btn" id="tool-pencil">Crayon</button>
+                    <button class="tool-btn" id="tool-eraser">Gomme</button>
+
+                    <div class="color-picker">
+                      <label>Couleur</label>
+                      <input type="color" id="color-input" value="#ff7ab6" />
+                    </div>
+
+                    <div class="size-picker">
+                      <label>Taille</label>
+                      <input
+                        type="range"
+                        id="size-input"
+                        min="2"
+                        max="30"
+                        value="6"
+                      />
+                    </div>
+
+                    <button class="tool-btn" id="tool-clear">
+                      Effacer tout
+                    </button>
+
+                    <div class="upload-block">
+                      <label for="altero-upload" class="upload-label"
+                        >Importer un dessin</label
+                      >
+                      <input
+                        type="file"
+                        id="altero-upload"
+                        accept="image/png, image/jpeg"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- CANVAS AREA -->
+                  <div class="canvas-wrapper">
+                    <canvas
+                      id="altero-canvas"
+                      width="600"
+                      height="600"
+                    ></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT CARD: TEXT INPUT -->
+              <div class="card">
+                <div class="card-header">
+                  <h3>Décrire ton Altero</h3>
+                  <span class="tag">Identité & sens</span>
+                </div>
+
+                <!-- ALTERO PREVIEW -->
+                <div class="altero-preview">
+                  <p class="preview-hint">
+                    Voici un aperçu de ton Altero. Il s’agit du dessin final que
+                    tu as créé dans l’éditeur.
+                  </p>
+                  <img
+                    src="./assets/altero-placeholder.png"
+                    alt="Aperçu de l'Altero"
+                    class="preview-img"
+                  />
+                </div>
+
+                <p class="hint">
+                  Explique comment il s’appelle, ce qu’il représente et comment
+                  il t’aide.
+                </p>
+
+                <textarea
+                  id="altero-description"
+                  class="altero-textarea"
+                  placeholder="Mon Altero s’appelle Lilo. C’est un lapin rose qui représente mon côté sensible mais courageux..."
+                ></textarea>
+
+                <button class="btn-primary" id="save-altero">
+                  Enregistrer mon Altero
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ESPACE ENSEIGNANTS -->
+        <section id="enseignants" class="screen">
+          <div class="space-header">
+            <div>
+              <div class="space-title">Espace Enseignant·es</div>
+              <div class="space-badge">Accompagner la classe</div>
+            </div>
+            <div class="subnav" id="enseignants-subnav">
+              <button class="subnav-btn active" data-subscreen="ens-formation">
+                <span class="icon-label">Formation</span>
+              </button>
+              <button class="subnav-btn" data-subscreen="ens-activites">
+                <span class="icon-label">Activités</span>
+              </button>
+              <button class="subnav-btn" data-subscreen="ens-suivi">
+                <span class="icon-label">Suivi</span>
+              </button>
+              <button class="subnav-btn" data-subscreen="ens-forum">
+                <span class="icon-label">Forum</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Formation -->
+          <div id="ens-formation" class="subscreen active">
+            <div class="simple-grid">
+              <div class="simple-card">
+                <h3>Modules de formation</h3>
+                <p>
+                  Mini-modules pour découvrir ou approfondir les compétences
+                  psychosociales (CPS) et les droits de l’enfant.
+                </p>
+                <ul class="list-clean">
+                  <li data-module-id="1" class="module-item">
+                    Module 1 – Introduction aux CPS
+                    <button class="btn-mini module-toggle">
+                      Marquer comme fait
+                    </button>
+                  </li>
+                  <li data-module-id="2" class="module-item">
+                    Module 2 – Droits de l’enfant et CIDE
+                    <button class="btn-mini module-toggle">
+                      Marquer comme fait
+                    </button>
+                  </li>
+                  <li data-module-id="3" class="module-item">
+                    Module 3 – Éducation par et pour les droits
+                    <button class="btn-mini module-toggle">
+                      Marquer comme fait
+                    </button>
+                  </li>
+                </ul>
+                <span class="pill" id="formationProgress">
+                  0 / 3 modules complétés
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activités -->
+          <div id="ens-activites" class="subscreen">
+            <div class="simple-grid">
+              <div class="simple-card">
+                <h3>Filtrer les activités</h3>
+                <p>
+                  Choisissez une compétence ou un droit pour voir des idées.
+                </p>
+                <label for="activityFilter">Je veux travailler :</label>
+                <select id="activityFilter">
+                  <option value="">Tout afficher</option>
+                  <option value="communication">Communication</option>
+                  <option value="conflit">Gestion de conflit</option>
+                  <option value="emotions">Émotions</option>
+                  <option value="participation">Participation / art. 12</option>
+                </select>
+                <span class="pill">Filtres par CPS / droit</span>
+              </div>
+
+              <div class="simple-card">
+                <h3>Banque d’activités</h3>
+                <ul class="list-clean" id="activityList">
+                  <!-- rempli par JS -->
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suivi -->
+          <div id="ens-suivi" class="subscreen">
+            <div class="simple-grid">
+              <div class="simple-card">
+                <h3>Suivi des missions</h3>
+                <p>
+                  Aperçu des missions “Droits en action” déclarées par les
+                  élèves.
+                </p>
+                <div id="teacherMissions">
+                  <!-- JS -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Forum -->
+          <div id="ens-forum" class="subscreen">
+            <div class="simple-grid">
+              <div class="simple-card">
+                <h3>Forum des enseignant·es</h3>
+                <p>
+                  Partager des idées, poser des questions et échanger avec
+                  d’autres enseignant·es qui participent au programme
+                  <em>Graines de droits</em>.
+                </p>
+                <div id="teacherForum" class="forum-box"></div>
+                <div class="forum-input-wrapper">
+                  <textarea
+                    id="teacherForumInput"
+                    placeholder="Ex : Comment vous faites la mise en commun après une histoire ?"
+                  ></textarea>
+                  <button class="btn-primary" id="btnTeacherForum">
+                    Publier
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ESPACE PARENTS -->
+        <section id="parents" class="screen">
+          <div class="space-header">
+            <div>
+              <div class="space-title">Espace Parents</div>
+              <div class="space-badge">Suivre & soutenir</div>
+            </div>
+          </div>
+
+          <div class="parent-section">
+            <!-- --- BLOCK 1 : MON DROIT DE LA SEMAINE --- -->
+            <div class="card parent-weekly-right">
+              <div class="card-header">
+                <h3>Mon droit de la semaine</h3>
+              </div>
+
+              <p>
+                <strong>Vidéo (1–2 min)</strong> – Cette semaine, les enfants
+                travaillent le
+                <strong>droit d’être entendu (art. 12)</strong> et la compétence
+                <strong>“écoute active”.</strong>
+              </p>
+
+              <div class="video-wrapper">
+                <video controls preload="metadata">
+                  <source
+                    src="./assets/video-droit-detre-entendu.mp4"
+                    type="video/mp4"
+                  />
+                  Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+              </div>
+
+              <div class="parent-mini-challenges">
+                <h2>Mini-défis à la maison</h2>
+                <div class="mini-list" id="parentChallenges"></div>
+              </div>
+            </div>
+
+            <!-- --- BLOCK 2 : SUIVI + FORUM --- -->
+            <div class="card">
+              <div class="card-header">
+                <h3>Suivi du parcours & forum</h3>
+              </div>
+
+              <div>
+                <div class="progress-pill">
+                  <span>Parcours</span>
+                  <span
+                    >Votre enfant en est à la
+                    <strong>séance 4 / 10</strong>.</span
+                  >
+                </div>
+
+                <p>
+                  Compétences travaillées récemment :
+                  <strong>empathie</strong>,
+                  <strong>gestion des conflits</strong>.
+                </p>
+              </div>
+
+              <h3>Forum d’échanges</h3>
+              <p>Partagez ce que vous testez à la maison.</p>
+
+              <div id="parentForum" class="forum-box"></div>
+
+              <div class="forum-input-wrapper">
+                <textarea
+                  id="parentForumInput"
+                  placeholder="Ajouter un message (ex : notre rituel émotions du soir)…"
+                ></textarea>
+                <button class="btn-primary" id="btnParentForum">Publier</button>
+              </div>
+
+              <h3 style="margin-top: 18px">Ressources</h3>
+              <ul class="list-clean">
+                <li>Comment soutenir la régulation émotionnelle.</li>
+                <li>Écouter sans juger : quelques phrases possibles.</li>
+                <li>Les droits de l’enfant à la maison, en 1 page.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ESPACE PARENTS-ENSEIGNANTS -->
+        <section id="parents-enseignants" class="screen">
+          <div class="space-header">
+            <div>
+              <div class="space-title">Espace Parents-enseignants</div>
+              <div class="space-badge">Ressources croisées & dialogue</div>
+            </div>
+          </div>
+
+          <div class="indicator-grid">
+            <div class="card">
+              <div class="card-header">
+                <h3>Ressources croisées CPS & droits</h3>
+              </div>
+              <p style="font-size: 14px">
+                Quelques supports communs pour nourrir les échanges
+                école-famille :
+              </p>
+              <ul class="list-clean">
+                <li>
+                  Fiche – “Les 5 familles de compétences psychosociales et des
+                  exemples concrets en classe et à la maison”.
+                </li>
+                <li>
+                  Fiche – “Les droits de l’enfant en version enfant, parent,
+                  école”.
+                </li>
+                <li>
+                  Idées d’activités à faire en duo parent-enfant sur un droit
+                  (ex : droit d’être entendu, droit au jeu).
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3>Forum école-famille</h3>
+              </div>
+              <p style="font-size: 14px">
+                Un espace commun pour partager des questions, des idées de
+                projet ou des retours sur le dispositif.
+              </p>
+              <div id="sharedForum" class="forum-box"></div>
+              <div class="forum-input-wrapper">
+                <textarea
+                  id="sharedForumInput"
+                  placeholder="Ex : Idée de projet commun école-famille autour des droits de l’enfant…"
+                ></textarea>
+                <button class="btn-primary" id="btnSharedForum">Publier</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        Prototype pédagogique – “Graines de droits” (version statique sans
+        enregistrement de données).
+      </footer>
+
+      <!-- FICHE SYNTHÈSE POPUP -->
+      <div id="ficheModal" class="fiche-modal">
+        <div class="fiche-modal-content">
+          <button
+            class="fiche-close"
+            id="ficheCloseBtn"
+            aria-label="Fermer la fiche"
+          >
+            ✕
+          </button>
+          <div id="ficheContent"></div>
+        </div>
+      </div>
+
+      <div class="toast" id="toast"></div>
+    </div>
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex3.Maison Économe</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <a class="back-to-site" href="../../index.html"
+        ><< Back to femmypriscillya.com</a
+      >
+    </header>
+
+    <!-- INTRO TEXT -->
+
+    <div class="main-content">
+      <div class="intro-text">
+        <h2>Économiser l’énergie, un geste pour la planète !</h2>
+        <p>
+          Chaque jour, nos petits gestes à la maison ont un grand impact sur
+          l’environnement. En Suisse, des milliers de foyers ont participé à des
+          programmes d’efficacité énergétique comme
+          <a href="https://www.unige.ch/sysener/projets/projet-en-cours/eco21"
+            >Eco21</a
+          >. Grâce à ces initiatives, les familles ont appris à réduire leur
+          consommation d’électricité, à remplacer leurs appareils énergivores,
+          et à adopter de bons réflexes durables.
+        </p>
+      </div>
+
+      <!-- buttons  -->
+      <div class="buttons">
+        <button id="mission-button">Ta mission</button>
+        <button id="source-button">À propos de cette étude</button>
+      </div>
+
+      <!-- pop-up box for mission -->
+      <div id="mission-popup" class="pop-up">
+        <div class="pop-up-content">
+          <span class="close-btn" id="close-mission">×</span>
+          <p>
+            Ta mission est d’explorer la maison et de cliquer sur les
+            <strong>objets interactifs</strong> qui te montreront des actions
+            concrètes pour
+            <strong>réduire ta consommation d’électricité</strong>.<br /><br />
+            Un petit renard malin, ambassadeur de l’éco-comportement,
+            t’accompagnera et te donnera des
+            <strong>conseils pratiques</strong> pour adopter les bons réflexes
+            du quotidien.
+          </p>
+        </div>
+      </div>
+
+      <!-- pop-up box for à propos cette etude -->
+
+      <div id="pop-up" class="pop-up">
+        <div class="pop-up-content">
+          <span class="close-btn" id="close-pop-up">×</span>
+          <p>
+            Cette application s’appuie sur une étude scientifique menée à
+            l’Université de Genève :
+            <strong
+              >Beyond short-term savings: A ten-year analysis of energy
+              efficiency program outcomes in Swiss households</strong
+            >
+            (Cabrera, Lambert, Naef, Bertholet & Patel, 2024 –
+            <em>Energy Research & Social Science, 109</em>). <br /><br />
+            L’étude analyse les effets à long terme des programmes suisses
+            d’efficacité énergétique, notamment Eco21, mené par les Services
+            Industriels de Genève (SIG) entre 2009 et 2019. Les chercheurs ont
+            étudié les habitudes de plus de 17 000 foyers et leurs données de
+            consommation électrique sur dix ans. Résultat : les ménages ayant
+            participé aux programmes ont réduit leur consommation d’électricité
+            de 19 à 26 % grâce à des gestes simples et au remplacement
+            d’appareils énergivores.
+          </p>
+          <br />
+          <p>Ressources complémentaires :</p>
+          <ul>
+            <li>
+              <a
+                href="https://www.iea.org/countries/switzerland/efficiency-demand"
+                target="_blank"
+                >IEA – Energy Efficiency in Switzerland</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://ww2.sig-ge.ch/a-propos-de-sig/nous-connaitre/le-programme-eco21"
+                target="_blank"
+                >Programme Eco21 (SIG)</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://doi.org/10.1016/j.erss.2023.103402"
+                target="_blank"
+                >Étude scientifique (doi.org)</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--  HOUSE AND ICONS -->
+      <div class="container">
+        <div class="house">
+          <!--  HOUSE IMAGE WITH DAY MODE -->
+          <img
+            id="house-img"
+            src="./assets/house.svg"
+            class="house"
+            alt="maison"
+          />
+
+          <!-- TOGGLE ICONS (2 classes : icon class for positioning, Toggle class for the interactive part) -->
+          <!--Data attributes to manage on/off state-->
+          <img
+            id="lamp1"
+            class="icon toggle"
+            src="./assets/lamp1-off.png"
+            data-img-on="assets/lamp1-on.png"
+            data-img-off="assets/lamp1-off.png"
+            data-text-on="Tu viens d’allumer une lampe LED, elles consomment jusqu’à 80% moins qu’une ampoule halogène."
+            data-text-off="Tu as éteint la lampe, éteindre les lumières inutiles permet d’économiser beaucoup d’énergie."
+            alt="Lampe LED dans le salon à allumer ou éteindre pour économiser l’énergie"
+          />
+
+          <img
+            id="lamp2"
+            class="icon toggle"
+            src="./assets/lamp2-off.png"
+            data-img-on="assets/lamp2-on.png"
+            data-img-off="assets/lamp2-off.png"
+            data-text-on="Tu as allumé une lampe LED."
+            data-text-off="Tu viens d’éteindre la lampe. Éliminer les éclairages inutiles est un geste simple mais très efficace pour économiser de l’énergie. Bravo !"
+            alt="Deuxième lampe LED dans la chambre, à allumer ou éteindre pour économiser l’énergie"
+          />
+
+          <img
+            id="shower"
+            class="icon toggle"
+            src="./assets/shower-off.png"
+            data-img-on="assets/shower-on.png"
+            data-img-off="assets/shower-off.png"
+            data-text-on="Une douche courte et avec un pommeau économique réduit la consommation d’eau chaude jusqu’à 50%."
+            data-text-off="Tu as éteint la douche. Économiser l’eau chaude = économiser de l’électricité !"
+            alt="Douche avec pommeau économique pour réduire la consommation d’eau chaude"
+          />
+
+          <img
+            id="kettle"
+            class="icon toggle"
+            src="./assets/kettle-off.png"
+            data-img-on="assets/kettle-on.png"
+            data-img-off="assets/kettle-off.png"
+            data-text-on="Chauffer seulement la quantité d’eau nécessaire permet d’économiser beaucoup d’énergie."
+            data-text-off="Tu as éteint la bouilloire."
+            alt="Bouilloire à allumer ou éteindre pour économiser l’électricité"
+          />
+
+          <!-- STATIC INFO ICONS (info only icons) -->
+          <img
+            id="fridge"
+            class="icon info"
+            src="./assets/fridge.png"
+            data-text="Remplacer un vieux frigo par un modèle A++ ou A+++ peut économiser jusqu’à 40% d’énergie par an !"
+            alt="Réfrigérateur éco-énergétique"
+          />
+
+          <img
+            id="power"
+            class="icon info"
+            src="./assets/power.png"
+            data-text="Une multiprise avec interrupteur permet d’éteindre les appareils en veille."
+            alt="Multiprise avec interrupteur pour couper les veilles"
+          />
+
+          <img
+            id="fox"
+            class="icon info"
+            src="./assets/fox.png"
+            data-text="Le renard malin dit : ferme les lampes, mets un couvercle pour cuisiner, ajuste la température du frigo à 4°C."
+            alt="Renard ambassadeur de l’éco-comportement"
+          />
+
+          <img
+            id="maltt"
+            class="icon info"
+            src="./assets/MALTT.png"
+            data-text="<strong>Le saviez-vous ?</strong><br>La consommation moyenne d’électricité des foyers suisses varie selon le type de logement :<br>- Un appartement pour une personne consomme environ <strong>2 200 kWh/an</strong>.<br>- Une maison individuelle pour deux personnes consomme environ <strong>3 550 kWh/an</strong>.
+     <br><br>
+     <a href='https://www.homegate.ch/c/en/advisor/sustainability/average-electricity-consumption-in-switzerland?' target='_blank'>source</a>"
+            alt="Labo MALTT"
+          />
+
+          <img
+            id="tecfa"
+            class="icon info"
+            src="./assets/tecfa.png"
+            data-text="Le secteur résidentiel consomme beaucoup d’énergie. Chaque petit geste compte ! <br><br>Pour en savoir plus : <a href='https://www.iea.org/countries/switzerland/efficiency-demand' target='_blank'>source</a>."
+            alt="Logo TECFA, centre d’apprentissage et de formation"
+          />
+
+          <!-- Info popup -->
+          <div id="infoBox"></div>
+        </div>
+      </div>
+    </div>
+    <!-- ENERGY CONSUMPTION BOX   -->
+    <div class="consumption-box">
+      <h3>Calcule la consommation d’énergie moyenne de ton foyer</h3>
+
+      <label for="people">Combien de personnes habitent chez toi ?</label>
+      <select id="people">
+        <option value="">-- choisir --</option>
+        <option value="1">1 personne</option>
+        <option value="2">2 personnes</option>
+        <option value="4">4 personnes</option>
+      </select>
+      <br />
+      <label for="type">Type de logement :</label>
+      <select id="type">
+        <option value="">-- choisir --</option>
+        <option value="detached">Maison individuelle</option>
+        <option value="apartment">Appartement</option>
+      </select>
+      <br />
+      <button id="calcBtn">Voir la moyenne</button>
+
+      <p id="result"></p>
+      <a
+        href="https://pubdb.bfe.admin.ch/de/suche?keywords=&q=Stromverbrauch+eines+typischen+Haushalts&from=&to=&nr="
+        target="_blank"
+        >Source :</a
+      ><em>
+        Haushalt-Stromverbrauch (J. Nipkow), Bundesamt für Energie August
+        2021.</em
+      >
+    </div>
+
+    <footer>
+      <p>© 2025 Femmy Priscillya. Date : 20 Novembre 2025.</p>
+      <p>
+        Illustrations & graphic design: licensed under
+        <a
+          href="https://creativecommons.org/licenses/by-nc/4.0/"
+          target="_blank"
+          >CC BY-NC 4.0.</a
+        >
+        Découvrez mon univers sur
+        <a href="https://www.femmypriscillya.com" target="_blank"
+          >mon siteweb</a
+        >
+        et
+        <a href="https://www.linkedin.com/in/femmypriscillya/" target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+      <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="CSS Valide !"
+          />
+        </a>
+      </p>
+    </footer>
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

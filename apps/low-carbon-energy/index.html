@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex5.Low Carbon Energy</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/vendor/jquery-ui-1.14.1/jquery-ui.min.css"
+    />
+    <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a class="back-to-site" href="../../index.html"
+        ><< Back to femmypriscillya.com</a
+      >
+    </header>
+    <!-- =========================INTRO =========================-->
+    <section class="container intro">
+      <h1>LOW-CARBON ENERGY FOR A CLIMATE-FRIENDLY FUTURE</h1>
+      <p>
+        We use more and more electricity every year. This is because the
+        population is growing, more people use electric cars and heating, and
+        digital tools (phones, computers, data centers) are everywhere. To
+        protect the climate, scientists explain that our energy systems need to
+        change deeply. According to international experts (such as the IPCC),
+        reaching climate goals means rethinking how we produce and use
+        electricity.<br />
+        In Switzerland, people use about
+        <a
+          href="https://www.news.admin.ch/en/nsb?id=100748&"
+          target="_blank"
+          rel="noopener noreferrer"
+          >56.1 TWh of electricity in 2023</a
+        >. Producing this electricity with low-carbon energy is not just a
+        technical challenge. It also raises important questions: "How much land
+        do energy installations need?", "What materials are required?", "How do
+        people react to different technologies?", "How reliable are these energy
+        systems over time?" This interactive simulation lets you explore these
+        questions. The numbers used here are simplified and approximate.
+      </p>
+    </section>
+    <!-- ========================= QUANTITATIVE Simulation ========================== -->
+    <section class="container simulation">
+      <h2>BUILD AN ENERGY MIX</h2>
+      <p class="instruction">
+        Your mission:<br />
+        Drag and drop energy sources below into the grid to build an energy mix.
+        Each icon represents an approximate amount of annual electricity
+        production. Combine different energy sources until the total production
+        reaches
+        <strong
+          ><a
+            href="https://www.newsd.admin.ch/newsd/message/attachments/87085.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >56.1 TWh/year</a
+          ></strong
+        >.
+      </p>
+      <div class="sources">
+        <div class="source-item">
+          <div class="card energy-icon" data-type="nuclear">
+            <img src="./assets/img/Nuclear.png" alt="Nuclear energy icon" />
+          </div>
+          <span class="source-label">Nuclear</span>
+        </div>
+        <div class="source-item">
+          <div class="card energy-icon" data-type="geothermal">
+            <img
+              src="./assets/img/Geothermal.png"
+              alt="Geothermal energy icon"
+            />
+          </div>
+          <span class="source-label">Geothermal</span>
+        </div>
+        <div class="source-item">
+          <div class="card energy-icon" data-type="wind">
+            <img src="./assets/img/Wind.png" alt="Wind energy icon" />
+          </div>
+          <span class="source-label">Wind</span>
+        </div>
+        <div class="source-item">
+          <div class="card energy-icon" data-type="solar">
+            <img src="./assets/img/Solar.png" alt="Solar energy icon" />
+          </div>
+          <span class="source-label">Solar</span>
+        </div>
+        <div class="source-item">
+          <div class="card energy-icon" data-type="hydro">
+            <img
+              src="./assets/img/Hydropower.png"
+              alt="Hydropower energy icon"
+            />
+          </div>
+          <span class="source-label">Hydropower</span>
+        </div>
+        <div class="source-item">
+          <div class="card energy-icon" data-type="biomass">
+            <img src="./assets/img/Biomass.png" alt="Biomass energy icon" />
+          </div>
+          <span class="source-label">Biomass</span>
+        </div>
+      </div>
+      <div class="simulation-area">
+        <div class="drop-grid">
+          <div class="drop-slot" data-type="nuclear">
+            <h3>Nuclear</h3>
+            <div class="slot-content"></div>
+          </div>
+          <div class="drop-slot" data-type="geothermal">
+            <h3>Geothermal</h3>
+            <div class="slot-content"></div>
+          </div>
+          <div class="drop-slot" data-type="wind">
+            <h3>Wind</h3>
+            <div class="slot-content"></div>
+          </div>
+          <div class="drop-slot" data-type="solar">
+            <h3>Solar</h3>
+            <div class="slot-content"></div>
+          </div>
+          <div class="drop-slot" data-type="hydro">
+            <h3>Hydropower</h3>
+            <div class="slot-content"></div>
+          </div>
+          <div class="drop-slot" data-type="biomass">
+            <h3>Biomass</h3>
+            <div class="slot-content"></div>
+          </div>
+        </div>
+        <div class="mix-feedback">
+          <p><strong>Installed units:</strong></p>
+          <ul id="energy-counts"></ul>
+          <div id="explanation"></div>
+          <div class="reset-container">
+            <button id="reset">Reset simulation</button>
+          </div>
+        </div>
+        <ul class="note">
+          <li><strong>Note:</strong></li>
+          <li>Each icon represents ~1 GW of installed capacity.</li>
+          <li>
+            Annual production is estimated from typical capacity factors
+            (simplified).
+          </li>
+          <li>
+            Values are approximate and vary with location, weather, technology,
+            and operations.
+          </li>
+        </ul>
+      </div>
+      <!--========================= MODAL / Pop up========================= -->
+      <div id="modal-overlay" class="hidden">
+        <div id="modal-box">
+          <button id="modal-close" type="button">x</button>
+
+          <p id="modal-message"></p>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= QUALITATIVE explorer ========================== -->
+    <section class="container impact-explorer">
+      <h2>COMPARE THE RELATIVE IMPACTS BY TECHNOLOGY</h2>
+      <p class="instruction">
+        Click on a technology to view its qualitative impacts.
+      </p>
+      <!-- ========================= Techno/Energy Sources SELECTOR  ========================== -->
+      <div class="impact-sources">
+        <div class="impact-item">
+          <div class="card impact-icon" data-type="nuclear">
+            <img src="./assets/img/Nuclear.png" alt="Nuclear energy icon" />
+          </div>
+          <span class="source-label">Nuclear</span>
+        </div>
+        <div class="impact-item">
+          <div class="card impact-icon" data-type="geothermal">
+            <img
+              src="./assets/img/Geothermal.png"
+              alt="Geothermal energy icon"
+            />
+          </div>
+          <span class="source-label">Geothermal</span>
+        </div>
+        <div class="impact-item">
+          <div class="card impact-icon" data-type="wind">
+            <img src="./assets/img/Wind.png" alt="Wind energy icon" />
+          </div>
+          <span class="source-label">Wind</span>
+        </div>
+        <div class="impact-item">
+          <div class="card impact-icon" data-type="solar">
+            <img src="./assets/img/Solar.png" alt="Solar energy icon" />
+          </div>
+          <span class="source-label">Solar</span>
+        </div>
+        <div class="impact-item">
+          <div class="card impact-icon" data-type="hydro">
+            <img
+              src="./assets/img/Hydropower.png"
+              alt="Hydropower energy icon"
+            />
+          </div>
+          <span class="source-label">Hydropower</span>
+        </div>
+        <div class="impact-item">
+          <div class="card impact-icon" data-type="biomass">
+            <img src="./assets/img/Biomass.png" alt="Biomass energy icon" />
+          </div>
+          <span class="source-label">Biomass</span>
+        </div>
+      </div>
+      <!-- ========================= INDICATORS + EXPLANATION ROW ========================== -->
+      <div class="impact-content">
+        <!-- Indicator BARS -->
+        <div class="indicators">
+          <h3 id="indicator-title">Select a technology</h3>
+          <p class="impact-scale-hint">
+            Higher bar = <strong>bigger challenge</strong> (qualitative).
+          </p>
+          <label class="impact-label">
+            <strong>Intermittency</strong>
+            <span>How much output varies (needs storage / flexibility).</span>
+          </label>
+          <div class="bar"><div id="bar-intermittency"></div></div>
+          <label class="impact-label">
+            <strong>Land use</strong>
+            <span>Space needed + effects on landscapes and ecosystems.</span>
+          </label>
+          <div class="bar"><div id="bar-land"></div></div>
+          <label class="impact-label">
+            <strong>Materials</strong>
+            <span>Build materials and potential supply constraints.</span>
+          </label>
+          <div class="bar"><div id="bar-minerals"></div></div>
+          <label class="impact-label">
+            <strong>Acceptance</strong>
+            <span>How easy it is to permit and build in real life.</span>
+          </label>
+          <div class="bar"><div id="bar-acceptance"></div></div>
+          <label class="impact-label">
+            <strong>Waste & end-of-life</strong>
+            <span>Residues, dismantling, recycling, long-term handling.</span>
+          </label>
+          <div class="bar"><div id="bar-waste"></div></div>
+        </div>
+        <!-- QUALITATIVE explanations -->
+        <div class="indicator-explanation">
+          <div id="indicator-explanation">
+            <p class="placeholder">
+              Click a technology above to read what it’s good at, and what makes
+              it difficult.
+            </p>
+          </div>
+          <div id="impact-explanations" hidden>
+            <div data-type="nuclear">
+              <h3>Nuclear</h3>
+              <p>
+                <strong>Good at:</strong> Produces lots of electricity, day and
+                night (very stable).
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> Radioactive waste needs safe
+                storage for a very long time. Many people worry about accidents
+                and safety. Plants take a long time to build.
+              </p>
+            </div>
+            <div data-type="solar">
+              <h3>Solar</h3>
+              <p>
+                <strong>Good at:</strong> Low-carbon electricity, especially
+                from rooftops.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> No sun = less electricity
+                (night/winter). Big solar parks need space. Panels need
+                materials, and recycling systems are still improving.
+              </p>
+            </div>
+            <div data-type="wind">
+              <h3>Wind</h3>
+              <p>
+                <strong>Good at:</strong> Low-carbon electricity with strong
+                production when it’s windy.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> No wind = less electricity. Some
+                people dislike the look or noise. Turbines need a lot of
+                steel/concrete and sometimes special metals. Old parts (like
+                blades) can be hard to recycle.
+              </p>
+            </div>
+            <div data-type="geothermal">
+              <h3>Geothermal</h3>
+              <p>
+                <strong>Good at:</strong> Can produce steady electricity with
+                little surface space.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> Deep drilling is difficult and
+                expensive. In Switzerland, people worry about small earthquakes
+                (induced seismicity). Hot underground water can leave mineral
+                deposits and residues that must be handled safely.
+              </p>
+            </div>
+            <div data-type="hydro">
+              <h3>Hydropower</h3>
+              <p>
+                <strong>Good at:</strong> Reliable and flexible. Switzerland
+                already uses a lot of it.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> Dams and reservoirs can change
+                rivers and ecosystems. Building more is often limited by
+                geography and nature protection. Water availability changes by
+                season.
+              </p>
+            </div>
+            <div data-type="biomass">
+              <h3>Biomass</h3>
+              <p>
+                <strong>Good at:</strong> Can produce electricity when needed if
+                there is enough fuel.
+              </p>
+              <p>
+                <strong>Trade-offs:</strong> The big question is, where does the
+                biomass come from? If it uses crops, it can compete with land
+                for food and nature. Burning biomass can create air pollution
+                and ash.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========================= RESOURCES ========================== -->
+      <div class="resources">
+        <h2>Resources :</h2>
+        <ul>
+          <li>
+            Gibon, T., Hahn Menacho, &Aacute;., &amp; Guiton, M. (2021).
+            <em>Life cycle assessment of electricity generation options</em>
+            [Report, PDF]. United Nations Economic Commission for Europe.
+            <a
+              href="https://unece.org/sites/default/files/2021-11/LCA_final.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://unece.org/sites/default/files/2021-11/LCA_final.pdf</a
+            >
+          </li>
+          <li>
+            Intergovernmental Panel on Climate Change. (2022).
+            <em
+              >WG III contribution to the Sixth Assessment Report: List of
+              corrigenda to be implemented (Chapter 6)</em
+            >
+            [PDF].
+            <a
+              href="https://www.ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_Chapter_06.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://www.ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_Chapter_06.pdf</a
+            >
+          </li>
+          <li>
+            Swiss Federal Office of Energy. (2024, April 18).
+            <em>Electricity production and consumption in 2023</em> [Factsheet,
+            PDF]. Federal Department of the Environment, Transport, Energy and
+            Communications (DETEC).
+            <a
+              href="https://www.newsd.admin.ch/newsd/message/attachments/87085.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://www.newsd.admin.ch/newsd/message/attachments/87085.pdf</a
+            >
+          </li>
+          <li>
+            Vouillamoz, N., Mengiardi, J., Garitte, B., &amp; Kompatscher, M.
+            (2025).
+            <em
+              >SwissDGS: Breaking the Ice - Bringing Circular Deep Geothermal
+              Systems to reality in Switzerland</em
+            >
+            [Conference paper, European Geothermal Congress 2025, PDF].
+            <a
+              href="https://www.researchgate.net/publication/397193794_SwissDGS_Breaking_the_Ice_-Bringing_Circular_Deep_Geothermal_Systems_to_reality_in_Switzerland"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://www.researchgate.net/publication/397193794_SwissDGS_Breaking_the_Ice_-Bringing_Circular_Deep_Geothermal_Systems_to_reality_in_Switzerland</a
+            >
+          </li>
+        </ul>
+      </div>
+      <p class="note">
+        Note : These indicators are intended to support comparison, discussion,
+        and critical thinking rather than precise energy planning. They
+        represent qualitative syntheses derived from scientific literature.
+      </p>
+    </section>
+    <footer>
+      <p>© 2025 Femmy Priscillya. Date : 20 December 2025.</p>
+      <p>
+        Illustrations & graphic design: licensed under
+        <a
+          href="https://creativecommons.org/licenses/by-nc/4.0/"
+          target="_blank"
+          >CC BY-NC 4.0.</a
+        >
+        Découvrez mon univers sur
+        <a href="https://www.femmypriscillya.com" target="_blank"
+          >mon siteweb</a
+        >
+        et
+        <a href="https://www.linkedin.com/in/femmypriscillya/" target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+      <p>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+          <img
+            style="border: 0; width: 88px; height: 31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="CSS Valide !"
+          />
+        </a>
+      </p>
+    </footer>
+
+    <!-- ========================= FOX GUIDE (floating helper) ========================== -->
+    <div id="fox-guide">
+      <img src="./assets/img/renard.png" alt="Fox guide" id="fox-avatar" />
+      <div id="fox-bubble" class="hidden"><p id="fox-message"></p></div>
+    </div>
+    <!-- ========================= FOX DIALOG (content)) ========================== -->
+    <div id="fox-dialogs" hidden>
+      <div data-fox="intro">
+        Hi! I’m your guide.<br /><br />
+        Try building an energy mix to reach <strong>56.1 TWh/year</strong>.
+        There is no perfect solution, only trade-offs to explore.
+      </div>
+      <div data-fox="first-drag">
+        Nice start!<br /><br />
+        Each icon represents a simplified amount of electricity. Some
+        technologies add energy quickly, others more slowly.
+      </div>
+      <div data-fox="nuclear-first">
+        Nuclear power adds a lot of energy at once.<br /><br />
+        It is compact and powerful, but raises long-term questions about waste
+        and safety.
+      </div>
+      <div data-fox="many-renewables">
+        Renewable sources often need many units.<br /><br />
+        They are low-carbon, but they raise questions about space, materials,
+        and variability.
+      </div>
+      <div data-fox="diversity">
+        Interesting mix!<br /><br />
+        Real energy systems combine several technologies to balance strengths
+        and weaknesses.
+      </div>
+      <div data-fox="target-reached">
+        Well done!<br /><br />
+        You reached Switzerland’s annual electricity demand. Now ask
+        yourself,<br />
+        What did this mix require in
+        <em>land, materials, and acceptance?</em> Check out the relative impacts
+        comparison below.
+      </div>
+      <div data-fox="hydro-dominance">
+        Hydropower already provides most of Switzerland’s electricity today
+        (SFOE, 2023), but expanding it further is limited by geography and
+        ecosystems.
+      </div>
+      <div data-fox="many-same-tech">
+        That can work for energy production.<br /><br />
+        But what might it mean for land use, materials, or public acceptance?
+      </div>
+      <!-- QUALITATIVE Alternating Messages -->
+      <div data-fox="qualitative-1">
+        These bars show relative impacts.<br /><br />
+        They are not exact numbers, they help you compare trade-offs.
+      </div>
+      <div data-fox="qualitative-2">
+        What consequences could your energy choice have for land use, materials,
+        and public acceptance ?
+      </div>
+    </div>
+
+    <!--========================= jQuery & jQuery UI =========================-->
+    <script src="./assets/vendor/jquery-3.7.1.min.js"></script>
+    <script src="./assets/vendor/jquery-ui-1.14.1/jquery-ui.min.js"></script>
+    <!--========================= jQuery UI for mobile/ touch device========================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <!--========================= srcipt/ app logic =========================-->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

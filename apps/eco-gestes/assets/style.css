@@ -1,0 +1,437 @@
+/* ======RESET & BASICS===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ede8d0;
+  color: #2b1114;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: #2b1114;
+}
+
+
+/*======NAVIGATION MENU ========*/
+
+
+/* back-to-portfolio bar */
+header {
+  width: 100%;
+  padding: 12px 20px;
+  background: #ede8d0;
+  border-bottom: 1px solid #d8d0b4;
+}
+.back-to-site {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2b1114;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+.back-to-site:hover {
+  color: #ca3504;
+}
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: #ca3504;
+}
+
+nav ul.menu li {
+  position: relative;
+}
+
+nav a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #d39a1c;
+}
+
+/* Icon + text only for the Accueil link */
+nav a.nav-home {
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%; 
+}
+
+nav a.nav-home .nav-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor; 
+  opacity: 0.95;
+  transform: translateY(-1px); /
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(202, 53, 4, 0.85);
+  border-radius: 0 0 8px 8px;
+  min-width: 180px;
+  list-style: none;
+}
+
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+
+.submenu-toggle {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+  background: inherit;
+  transition: background-color 0.3s;
+}
+
+.submenu-toggle:hover {
+  background-color: #d39a1c;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+/* ==========the (house + icons) container================ */
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* INTRO text */
+.intro-text {
+  width: 100%;
+  align-items: center;
+  max-width: 900px;
+  background: #ede8d0;
+  padding: 25px 40px;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.intro-text h2 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* --- HOUSE CONTAINER --- */
+.house {
+  position: relative;
+  width: 900px;
+  margin: 0 auto;
+  background: #ede8d0;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* --- ICONS --- */
+.icon {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 10;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* --- ICON SIZES --- */
+#fridge {
+  width: 13%;
+}
+#power {
+  width: 3%;
+}
+#shower {
+  width: 12%;
+}
+#kettle {
+  width: 7%;
+}
+#lamp1,
+#lamp2 {
+  width: 12%;
+}
+#fox {
+  width: 8%;
+}
+#maltt {
+  width: 11%;
+}
+#tecfa {
+  width: 15%;
+}
+
+/* --- ICON POSITIONS (I have to adjust the position manually by changing the %) --- */
+#lamp1 {
+  top: 44%;
+  left: 40%;
+}
+#lamp2 {
+  top: 26%;
+  left: 47%;
+}
+#fridge {
+  top: 47%;
+  left: 50%;
+}
+#power {
+  top: 28%;
+  left: 56%;
+}
+#shower {
+  top: 24%;
+  left: 60%;
+}
+#kettle {
+  top: 50%;
+  left: 62%;
+}
+#fox {
+  top: 27%;
+  left: 39%;
+}
+#maltt {
+  top: 59%;
+  left: 40%;
+}
+#tecfa {
+  top: 36%;
+  left: 10%;
+}
+
+/* --- POPUP INFO BOX --- */
+#infoBox {
+  display: none;
+  position: fixed;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  padding: 20px;
+  background-color: #f0f0f0;
+
+  border-radius: 15px;
+  z-index: 100;
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+  color: #2b1114;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button for popup */
+#infoBox .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ca3504;
+}
+
+/* buttons*/
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.buttons button {
+  padding: 15px 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button {
+  background-color: #ca3504;
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d39a1c;
+}
+
+/* --- POPUP boxes from the buttons--- */
+.pop-up {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up-content {
+  background-color: #c5ba9a;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 20px;
+  text-align: justify;
+  line-height: 1.6;
+  color: #2b1114;
+  position: relative;
+}
+
+.pop-up-content a {
+  color: #2b1114;
+  text-decoration: underline;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #ca3504;
+  font-weight: bold;
+}
+
+/* =============== ENERGY CONSUMPTION BOX ============= */
+.consumption-box {
+  background: #c5ba9a;
+  padding: 25px 35px;
+  margin-top: 10px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  margin: 30px auto;
+  text-align: center;
+  line-height: 1.6;
+  color: #2b1114;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.consumption-box select,
+.consumption-box button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.consumption-box button:hover {
+  background-color: #d39a1c;
+}
+
+#result {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* ========= FOOTER ===========*/
+footer {
+  width: 100%;
+  align-self: stretch;
+  text-align: center;
+  background: #c5ba9a;
+  padding: 20px;
+  margin-top: auto;
+}
+
+footer a {
+  color: #2b1114;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+/* ========== RESPONSIVE ===========*/
+@media (max-width: 950px) {
+  .house {
+    width: 700px;
+  }
+}
+
+@media (max-width: 800px) {
+  .house {
+    width: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .house {
+    width: 350px;
+  }
+
+  .submenu {
+    position: static;
+    background: rgba(202, 53, 4, 0.95);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .submenu a {
+    padding: 18px;
+    font-size: 1.1em;
+  }
+
+  .has-submenu > .submenu-toggle::after {
+    content: " ▾";
+    font-size: 1.2em;
+  }
+}

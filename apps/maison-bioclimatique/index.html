@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F.Priscillya Flashards</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <a class="back-to-site" href="../../index.html"
+        ><< Back to femmypriscillya.com</a
+      >
+    </header>
+
+    <main>
+      <div id="image-container">
+        <img
+          id="house"
+          src="./assets/Passive-house-question.svg"
+          alt="Maison bioclimatique"
+        />
+      </div>
+
+      <p class="intro-text">
+        Cliquez sur le bouton <span class="red-text">rouge</span> ci-dessous
+        pour voir comment le design de la maison affecte le confort thermique au
+        fil des saisons.
+      </p>
+
+      <div class="buttons">
+        <button id="summer-button">Été</button>
+        <button id="winter-button">Hiver</button>
+        <button id="reset-button">Réinitialiser</button>
+        <button id="explain-button">Explication</button>
+      </div>
+
+      <p class="counter-text">
+        Vous avez observé les saisons
+        <span id="view-count" class="num-counter"> 0 </span> fois.
+      </p>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <p>
+            Bienvenue à la maison
+            <a
+              href="https://www.romande-energie.ch/blog/larchitecture-bioclimatique-le-retour-au-bon-sens"
+              target="_blank"
+              >bioclimatique</a
+            >
+            ! À Genève,
+            <a
+              href="https://www.encyclopedie-environnement.org/zoom/la-classification-de-koppen/"
+              target="_blank"
+              >le climat tempéré continental</a
+            >
+            impose de bien penser l’orientation et l’isolation. Une
+            <a
+              href="https://www.edf-solutions-solaires.com/guide-solaire/batiment-passif/"
+              target="_blank"
+              >maison passive</a
+            >
+            est conçue pour offrir un confort optimal toute l’année tout en
+            consommant très peu d’énergie. Les espaces de vie sont orientés au
+            sud pour profiter du soleil en hiver, et l’isolation renforcée
+            maintient la chaleur en hiver et la fraîcheur en été. Un système de
+            <a
+              href="https://www.ecohabitation.com/guides/2573/le-ventilateur-recuperateur-de-chaleur-vrc-une-solution-optimale/"
+              target="_blank"
+              >ventilation avec récupération de chaleur</a
+            >
+            (HRV : Heat Recovery Ventilation) fournit de l’air frais sans
+            gaspiller d’énergie, et des protections solaires empêchent la
+            surchauffe en été. Le résultat : une maison confortable, économique
+            et respectueuse de l’environnement.
+          </p>
+        </div>
+      </div>
+
+      <img src="./assets/leaf1.png" alt="leaf1" class="leaf" id="leaf1" />
+      <img src="./assets/leaf2.png" alt="leaf2" class="leaf" id="leaf2" />
+      <img src="./assets/leaf3.png" alt="leaf3" class="leaf" id="leaf3" />
+    </main>
+
+    <footer>
+      <p>© 2025 Femmy Priscillya. Date : 11 Octobre 2025.</p>
+      <p>
+        Illustrations & graphic design: licensed under
+        <a
+          href="https://creativecommons.org/licenses/by-nc/4.0/"
+          target="_blank"
+          >CC BY-NC 4.0.</a
+        >
+        Découvrez mon univers sur
+        <a href="https://www.femmypriscillya.com" target="_blank"
+          >mon siteweb</a
+        >
+        et
+        <a href="https://www.linkedin.com/in/femmypriscillya/" target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
