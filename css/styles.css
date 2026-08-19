@@ -273,7 +273,7 @@ h1 {
 .disc .n {
   font-family: "Jost", sans-serif;
   font-weight: 600;
-  font-size: 44px;
+  font-size: 64px;
   color: var(--accent);
   letter-spacing: 0.02em;
   display: block;
@@ -539,6 +539,53 @@ h1 {
   font-family: "Work Sans", sans-serif;
 }
 
+/* ---- UX case study ---- */
+.case {
+  max-width: 68ch;
+}
+.case h2 {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin: 40px 0 12px;
+}
+.case p {
+  font-size: 17px;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.case-meta {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 8px;
+}
+.shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.shots figure {
+  margin: 0;
+}
+.shots img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #efebe1;
+  cursor: zoom-in;
+}
+.shots figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+@media (max-width: 700px) {
+  .shots {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---- lightbox ---- */
 .lightbox {
   position: fixed;
@@ -680,11 +727,6 @@ footer a:hover {
 }
 
 /* ---- responsive ---- */
-@media (max-width: 900px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media (max-width: 820px) {
   .disc-grid {
     grid-template-columns: 1fr;
@@ -709,6 +751,18 @@ footer a:hover {
   }
   nav .hide-sm {
     display: none;
+  }
+  .lang-mobile {
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: "Jost", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .lang-mobile b {
+    color: var(--ink);
   }
 
   .hero {
@@ -735,18 +789,9 @@ footer a:hover {
   }
 }
 
-@media (max-width: 820px) {
-  .lang-mobile {
-    display: block;
-    text-align: center;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--line);
-    font-family: "Jost", sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .lang-mobile b {
-    color: var(--ink);
+@media (max-width: 700px) {
+  .shots {
+    grid-template-columns: 1fr;
   }
 }
 @media (min-width: 821px) {
