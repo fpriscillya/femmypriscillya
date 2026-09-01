@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 1 | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/worksheet.css" />
+  </head>
+  <body class="ws">
+    <div class="ws-bar">
+      <div class="ws-bar__inner">
+        <span class="ws-bar__brand">
+          <a href="index.html" aria-label="Home"
+            ><img
+              src="assets/timepix-logo.svg"
+              alt="TIMEPIX@school"
+              onerror="this.style.display = 'none'"
+          /></a>
+          Seeing the Invisible
+        </span>
+        <span class="ws-bar__actions">
+          <a class="ws-back" href="index.html">Back to the lesson</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet__head">
+        <img
+          src="assets/laptop.png"
+          alt="Activity 1 illustration"
+          class="sheet__hero-img"
+          onerror="this.style.display = 'none'"
+        />
+        <p class="sheet__eyebrow">Activity 1</p>
+        <h1>Is an empty room really empty?</h1>
+        <p class="sheet__sub">
+          Make your three predictions before you switch the detector on. Lock
+          each one in. You will find out if you were right at the bench.
+        </p>
+      </div>
+
+      <div class="idrow">
+        <label>Name <input type="text" /></label>
+        <label>Partner(s) <input type="text" /></label>
+        <label>Date <input type="text" /></label>
+      </div>
+
+      <!-- PREDICT -->
+      <div class="step">
+        <span class="step__tag step__tag--predict"
+          >Predict, before you switch on</span
+        >
+        <h2>Three questions. No right answers yet.</h2>
+
+        <p class="guide" style="margin-top: 8px">
+          <strong>Question 1.</strong> You switch the detector on in a normal
+          classroom with nothing in front of it. What will you see in one
+          minute?
+        </p>
+        <div class="pred-options" id="p1">
+          <button class="pred-opt" data-q="p1" data-i="0">
+            <span class="pred-letter">A</span>Nothing at all, a blank screen
+          </button>
+          <button class="pred-opt" data-q="p1" data-i="1">
+            <span class="pred-letter">B</span>A handful of marks
+          </button>
+          <button class="pred-opt" data-q="p1" data-i="2">
+            <span class="pred-letter">C</span>The screen fills up quickly
+          </button>
+        </div>
+        <button class="pred-lock-btn" id="lock1" disabled>
+          Lock in my answer
+        </button>
+        <p class="pred-confirmed" id="conf1">
+          Prediction locked. You will find out at the bench.
+        </p>
+
+        <p class="guide" style="margin-top: 22px">
+          <strong>Question 2.</strong> Three particles hit the sensor: an alpha,
+          a beta, and a cosmic muon. Which one leaves the biggest, densest mark
+          on the grid?
+        </p>
+        <div class="pred-options" id="p2">
+          <button class="pred-opt" data-q="p2" data-i="0">
+            <span class="pred-letter">A</span>The alpha
+          </button>
+          <button class="pred-opt" data-q="p2" data-i="1">
+            <span class="pred-letter">B</span>The beta
+          </button>
+          <button class="pred-opt" data-q="p2" data-i="2">
+            <span class="pred-letter">C</span>The muon
+          </button>
+        </div>
+        <button class="pred-lock-btn" id="lock2" disabled>
+          Lock in my answer
+        </button>
+        <p class="pred-confirmed" id="conf2">
+          Prediction locked. You will find out at the bench.
+        </p>
+
+        <p class="guide" style="margin-top: 22px">
+          <strong>Question 3.</strong> In one minute indoors with no source
+          nearby, how many straight muon tracks will you catch?
+        </p>
+        <div class="pred-options" id="p3">
+          <button class="pred-opt" data-q="p3" data-i="0">
+            <span class="pred-letter">A</span>None
+          </button>
+          <button class="pred-opt" data-q="p3" data-i="1">
+            <span class="pred-letter">B</span>A few
+          </button>
+          <button class="pred-opt" data-q="p3" data-i="2">
+            <span class="pred-letter">C</span>Dozens
+          </button>
+        </div>
+        <button class="pred-lock-btn" id="lock3" disabled>
+          Lock in my answer
+        </button>
+        <p class="pred-confirmed" id="conf3">
+          Prediction locked. You will find out at the bench.
+        </p>
+      </div>
+
+      <!-- OBSERVE -->
+
+      <div class="step">
+        <span class="step__tag step__tag--observe">Observe</span>
+        <div class="ideas-deco" aria-hidden="true">
+          <img
+            src="assets/paper.png"
+            alt=""
+            onerror="this.style.display = 'none'"
+          /><img
+            src="assets/pencil.png"
+            alt=""
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+        <h2>What did the detector record?</h2>
+        <p class="guide">
+          Run the detector with nothing in front of it. Count what you saw and
+          fill in the table.
+        </p>
+
+        <div>
+          <span class="field-inline"
+            >Measurement time <input type="text" placeholder="e.g. 15 min"
+          /></span>
+          <span class="field-inline"
+            >Total tracks recorded <input type="text"
+          /></span>
+        </div>
+
+        <table class="ws-table" style="margin-top: 14px">
+          <thead>
+            <tr>
+              <th>Track shape</th>
+              <th>Particle type</th>
+              <th style="width: 22%">How many?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fixed">Single dot</td>
+              <td class="fixed">Photon (X-ray or gamma)</td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Curly or worm-like</td>
+              <td class="fixed">Electron (beta)</td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Round blob</td>
+              <td class="fixed">Alpha</td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Straight line</td>
+              <td class="fixed">Muon</td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- EXPLAIN -->
+      <div class="step">
+        <span class="step__tag step__tag--explain">Explain</span>
+        <h2>What does it mean?</h2>
+        <p class="guide">
+          Was the "empty" detector really empty? Which of your three predictions
+          were right, and which surprised you? What does that tell you about
+          radiation in the room?
+        </p>
+        <textarea rows="6"></textarea>
+      </div>
+
+      <div class="pred-summary" id="summary1">
+        <h4>Your predictions</h4>
+        <ul class="pred-summary__list" id="summaryList1"></ul>
+        <p class="pred-summary__note">
+          Keep these in mind when you switch the detector on.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const QUESTIONS_1 = [
+        {
+          q: "What will you see in one minute?",
+          opts: [
+            "Nothing at all, a blank screen",
+            "A handful of marks",
+            "The screen fills up quickly",
+          ],
+        },
+        {
+          q: "Which leaves the biggest densest mark?",
+          opts: ["The alpha", "The beta", "The muon"],
+        },
+        {
+          q: "How many muon tracks in one minute indoors?",
+          opts: ["None", "A few", "Dozens"],
+        },
+      ];
+      const selections = {};
+
+      document.querySelectorAll(".pred-opt").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const q = btn.dataset.q;
+          const group = document.getElementById(q);
+          if (group.classList.contains("pred-locked")) return;
+          group
+            .querySelectorAll(".pred-opt")
+            .forEach((b) => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          selections[q] = parseInt(btn.dataset.i);
+          document.getElementById("lock" + q.slice(1)).disabled = false;
+        });
+      });
+
+      ["lock1", "lock2", "lock3"].forEach((id, i) => {
+        const btn = document.getElementById(id);
+        const q = "p" + (i + 1);
+        btn.addEventListener("click", () => {
+          if (selections[q] === undefined) return;
+          document.getElementById(q).classList.add("pred-locked");
+          btn.disabled = true;
+          document.getElementById("conf" + (i + 1)).classList.add("show");
+          maybeShowSummary();
+        });
+      });
+
+      function maybeShowSummary() {
+        if (Object.keys(selections).length < 3) return;
+        const box = document.getElementById("summary1");
+        const list = document.getElementById("summaryList1");
+        list.innerHTML = "";
+        QUESTIONS_1.forEach((item, i) => {
+          const q = "p" + (i + 1);
+          if (selections[q] === undefined) return;
+          const li = document.createElement("li");
+          li.innerHTML =
+            '<span class="pred-summary__q">' +
+            item.q +
+            "</span>" +
+            '<span class="pred-summary__a">' +
+            item.opts[selections[q]] +
+            "</span>";
+          list.appendChild(li);
+        });
+        box.classList.add("show");
+      }
+    </script>
+  </body>
+</html>

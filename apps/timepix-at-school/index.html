@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Before you start | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ============ STICKY NAV ============ -->
+    <nav class="topnav" id="topnav" aria-label="Page sections">
+      <div class="topnav__inner">
+        <a href="#" aria-label="Go to top"
+          ><img
+            class="topnav__logo"
+            src="assets/timepix-logo.svg"
+            alt="TIMEPIX@school"
+            onerror="this.style.display = 'none'"
+        /></a>
+        <ul class="topnav__list" role="list">
+          <li><a class="topnav__link" href="#theory">Theory</a></li>
+          <li><a class="topnav__link" href="#detector">The Detector</a></li>
+          <li><a class="topnav__link" href="#decay">Decay</a></li>
+          <li class="topnav__has-drop">
+            <button class="topnav__link topnav__drop-toggle">Activities</button>
+            <ul class="topnav__dropdown" role="list">
+              <li>
+                <a href="activity-1.html"
+                  >Activity 1 . Is an empty room really empty?</a
+                >
+              </li>
+              <li>
+                <a href="activity-2.html"
+                  >Activity 2 . Can a banana be radioactive?</a
+                >
+              </li>
+              <li>
+                <a href="activity-3.html"
+                  >Activity 3 . Radon in the air (balloon)</a
+                >
+              </li>
+              <li>
+                <a href="activity-4.html"
+                  >Activity 4 . How slowly does potassium decay?</a
+                >
+              </li>
+              <li>
+                <a href="activity-5.html"
+                  >Activity 5 . Pulling radon out of the air</a
+                >
+              </li>
+              <li>
+                <a href="activity-6.html"
+                  >Activity 6 . Does radiation increase with altitude?</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <canvas id="pixelHero" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <img
+          class="hero__logo"
+          src="assets/timepix-logo.svg"
+          alt="TIMEPIX@school"
+          onerror="this.style.display = 'none'"
+        />
+        <p class="eyebrow">Before you start</p>
+        <h1 class="hero__title">See the invisible</h1>
+        <p class="hero__lead">
+          Right now, tiny particles are shooting straight through you. Through
+          your chair, the walls, this screen, your hands. You cannot see them or
+          feel them. The MiniPIX detector can. In a few minutes you will watch
+          them appear on a screen, one by one.
+        </p>
+        <p class="hero__meta">
+          A quick read first, then make your predictions to take to the
+          detector.
+        </p>
+        <a class="btn btn--ghost" href="#theory">Start</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ THEORY ============ -->
+      <section class="part part--alt" id="theory">
+        <div class="wrap">
+          <h2 class="part__title">Theory</h2>
+          <p class="part__intro">
+            Here's what you need to know what the detector is looking at.
+          </p>
+
+          <article class="card card--tint">
+            <h3>What radiation is</h3>
+            <p>
+              Radiation is energy leaving an atom. It comes out either as waves,
+              like X-rays or gamma rays, or as fast-moving particles, like alpha
+              or beta. The kind that carries enough energy to knock electrons
+              off other atoms is called <strong>ionising radiation</strong>, and
+              that is exactly what the detector can see.
+            </p>
+            <p>
+              A common mix-up is treating light as something separate from
+              radiation. Visible light is actually a form of radiation, just
+              with too little energy per photon to ionise atoms. Gamma rays,
+              X-rays, and ultraviolet light are all part of the same family of
+              electromagnetic waves. The detector responds to the high-energy
+              end of that family, not the visible end.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Four types to know</h3>
+            <p>
+              Tap each card. The front names the particle. The back shows what
+              its track looks like on the detector.
+            </p>
+            <div class="flips">
+              <!-- ALPHA -->
+              <button class="flip" aria-pressed="false">
+                <span class="flip__inner">
+                  <span class="flip__face flip__front flip__front--alpha">
+                    <span class="flip__greek">&alpha;</span>
+                    <span class="flip__name">Alpha</span>
+                    <span class="flip__sub"
+                      >Two protons, two neutrons. Heavy and slow.</span
+                    >
+                  </span>
+                  <span class="flip__face flip__back">
+                    <svg
+                      viewBox="0 0 120 120"
+                      class="track-svg"
+                      aria-label="Alpha track on detector"
+                    >
+                      <rect width="120" height="120" fill="#003d78" />
+                      <rect
+                        x="48"
+                        y="48"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="1"
+                      />
+                      <rect
+                        x="58"
+                        y="48"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="68"
+                        y="48"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.7"
+                      />
+                      <rect
+                        x="48"
+                        y="58"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="58"
+                        y="58"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="1"
+                      />
+                      <rect
+                        x="68"
+                        y="58"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.85"
+                      />
+                      <rect
+                        x="48"
+                        y="68"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.7"
+                      />
+                      <rect
+                        x="58"
+                        y="68"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.8"
+                      />
+                      <rect
+                        x="68"
+                        y="68"
+                        width="10"
+                        height="10"
+                        fill="#f08081"
+                        opacity="0.55"
+                      />
+                    </svg>
+                    <span class="track-label"
+                      >Dense, roughly round blob. Heavy particle, lots of energy
+                      deposited in a small area.</span
+                    >
+                  </span>
+                </span>
+              </button>
+
+              <!-- BETA -->
+              <button class="flip" aria-pressed="false">
+                <span class="flip__inner">
+                  <span class="flip__face flip__front flip__front--beta">
+                    <span class="flip__greek">&beta;</span>
+                    <span class="flip__name">Beta</span>
+                    <span class="flip__sub"
+                      >A single electron. Light and fast.</span
+                    >
+                  </span>
+                  <span class="flip__face flip__back">
+                    <svg
+                      viewBox="0 0 120 120"
+                      class="track-svg"
+                      aria-label="Beta track on detector"
+                    >
+                      <rect width="120" height="120" fill="#003d78" />
+                      <rect x="25" y="56" width="8" height="8" fill="#1ebcba" />
+                      <rect x="33" y="56" width="8" height="8" fill="#1ebcba" />
+                      <rect x="41" y="56" width="8" height="8" fill="#1ebcba" />
+                      <rect x="41" y="64" width="8" height="8" fill="#1ebcba" />
+                      <rect x="41" y="72" width="8" height="8" fill="#1ebcba" />
+                      <rect x="49" y="72" width="8" height="8" fill="#1ebcba" />
+                      <rect x="57" y="72" width="8" height="8" fill="#1ebcba" />
+                      <rect x="57" y="64" width="8" height="8" fill="#1ebcba" />
+                      <rect x="57" y="56" width="8" height="8" fill="#1ebcba" />
+                      <rect x="57" y="48" width="8" height="8" fill="#1ebcba" />
+                      <rect x="65" y="48" width="8" height="8" fill="#1ebcba" />
+                      <rect x="73" y="48" width="8" height="8" fill="#1ebcba" />
+                      <rect x="73" y="56" width="8" height="8" fill="#1ebcba" />
+                      <rect x="73" y="64" width="8" height="8" fill="#1ebcba" />
+                      <rect x="81" y="64" width="8" height="8" fill="#1ebcba" />
+                      <rect x="89" y="64" width="8" height="8" fill="#1ebcba" />
+                      <rect x="89" y="56" width="8" height="8" fill="#1ebcba" />
+                    </svg>
+                    <span class="track-label"
+                      >Connected winding path. The light electron scatters and
+                      changes direction as it passes through the chip.</span
+                    >
+                  </span>
+                </span>
+              </button>
+
+              <!-- GAMMA -->
+              <button class="flip" aria-pressed="false">
+                <span class="flip__inner">
+                  <span class="flip__face flip__front flip__front--gamma">
+                    <span class="flip__greek">&gamma;</span>
+                    <span class="flip__name">Gamma</span>
+                    <span class="flip__sub"
+                      >A high-energy wave, not a particle.</span
+                    >
+                  </span>
+                  <span class="flip__face flip__back">
+                    <svg
+                      viewBox="0 0 120 120"
+                      class="track-svg"
+                      aria-label="Gamma track on detector"
+                    >
+                      <rect width="120" height="120" fill="#003d78" />
+                      <rect
+                        x="57"
+                        y="57"
+                        width="7"
+                        height="7"
+                        fill="#b6e1df"
+                        opacity="0.95"
+                      />
+                    </svg>
+                    <span class="track-label"
+                      >A single dot. Gamma deposits energy at isolated points,
+                      leaving no connected path.</span
+                    >
+                  </span>
+                </span>
+              </button>
+
+              <!-- MUON -->
+              <button class="flip" aria-pressed="false">
+                <span class="flip__inner">
+                  <span class="flip__face flip__front flip__front--muon">
+                    <span class="flip__greek">&mu;</span>
+                    <span class="flip__name">Muon</span>
+                    <span class="flip__sub"
+                      >A heavy cosmic visitor from above.</span
+                    >
+                  </span>
+                  <span class="flip__face flip__back">
+                    <svg
+                      viewBox="0 0 120 120"
+                      class="track-svg"
+                      aria-label="Muon track on detector"
+                    >
+                      <rect width="120" height="120" fill="#003d78" />
+                      <rect
+                        x="10"
+                        y="10"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="20"
+                        y="20"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="30"
+                        y="30"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.9"
+                      />
+                      <rect
+                        x="40"
+                        y="40"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="50"
+                        y="50"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.9"
+                      />
+                      <rect
+                        x="60"
+                        y="60"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="70"
+                        y="70"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.9"
+                      />
+                      <rect
+                        x="80"
+                        y="80"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.95"
+                      />
+                      <rect
+                        x="90"
+                        y="90"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.85"
+                      />
+                      <rect
+                        x="100"
+                        y="100"
+                        width="8"
+                        height="8"
+                        fill="#f4d3d3"
+                        opacity="0.8"
+                      />
+                    </svg>
+                    <span class="track-label"
+                      >Long, straight, dense streak across the whole chip. Muons
+                      barely interact with matter and punch straight
+                      through.</span
+                    >
+                  </span>
+                </span>
+              </button>
+            </div>
+
+            <div class="xray-note">
+              <strong>What about X-rays?</strong> X-rays sit between ultraviolet
+              light and gamma rays on the electromagnetic spectrum. The detector
+              can see them too. Unlike gamma, which comes from nuclear
+              transitions, X-rays are produced when fast electrons slow down or
+              when electrons jump between shells in heavy atoms. On the detector
+              they look similar to gamma, scattered single-pixel dots, so the
+              two are hard to tell apart without energy calibration.
+            </div>
+            <img
+              src="assets/satellite.png"
+              alt=""
+              style="
+                display: block;
+                margin: 16px auto;
+                width: 260px;
+                max-width: 100%;
+              "
+              onerror="this.style.display = 'none'"
+            />
+            <div class="penetration">
+              <h4>How far each type gets through matter</h4>
+              <p>
+                Each type is stopped by something different. Alpha is the
+                easiest. A sheet of paper, or just a few centimetres of air,
+                blocks it. Beta gets further and needs a few millimetres of
+                aluminium. Gamma is the hardest of the three, and it takes thick
+                lead or concrete to stop it. Muons are in a league of their own.
+                They can pass through hundreds of metres of solid rock.
+              </p>
+              <p class="note">
+                Click a particle name to fire it. Watch where it stops.
+              </p>
+              <div class="pen3d-wrap">
+                <canvas
+                  id="penCanvas"
+                  style="
+                    border-radius: 10px;
+                    background: #f9fdfd;
+                    display: block;
+                  "
+                ></canvas>
+              </div>
+              <div class="pen3d-info" id="pen3dInfo" aria-live="polite">
+                <p class="pen3d-info__hint">
+                  Click a particle name to fire it.
+                </p>
+              </div>
+              <p class="note" style="margin-top: 6px">
+                Adapted from MEDRA project guide (C. Cabo, MediPIX / CERN).
+              </p>
+            </div>
+          </article>
+
+          <article class="card card--tint">
+            <h3>It is all around us</h3>
+            <div class="card-split">
+              <div class="card-split__body">
+                <p>
+                  You do not need a special source to find radiation. It is
+                  everywhere, all the time. For most people the biggest natural
+                  source is <strong>radon</strong>, a gas that seeps out of the
+                  ground and collects indoors. Add to that radiation from rocks,
+                  from food, and from space.
+                </p>
+                <p>
+                  About 80 percent of the radiation an average person meets in a
+                  year is natural, and the total can vary by more than a hundred
+                  times depending on where you live. Radiation is normal. The
+                  job is to measure it, not to fear it.
+                </p>
+              </div>
+              <img
+                src="assets/rock.png"
+                alt=""
+                class="card-split__img"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>From space</h3>
+            <div class="card-split">
+              <img
+                src="assets/earth.png"
+                alt=""
+                class="card-split__img"
+                style="width: 260px"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="card-split__body">
+                <p>
+                  Some radiation arrives from space.
+                  <strong>Cosmic rays</strong> are particles travelling at
+                  nearly the speed of light, mostly protons, coming from the Sun
+                  and from violent events far away such as exploding stars. When
+                  they hit the upper atmosphere they smash into atoms and create
+                  showers of new particles. The muons you saw on the flip card
+                  are one of those secondaries. The higher you go, the more of
+                  them there are.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--tint" id="misconceptions">
+            <h3>True or false?</h3>
+            <p class="misc-intro">
+              These are common ways of thinking about radiation that turn out to
+              be incomplete or wrong. See which ones you recognise in your own
+              thinking before you start measuring.
+            </p>
+
+            <div class="misc-grid">
+              <button class="misc-item" aria-expanded="false">
+                <span class="misc-tag">Radiation and danger</span>
+                <span class="misc-teaser"
+                  >Some radiation is "good", some is "bad".</span
+                >
+                <span class="misc-body"
+                  >People often split radiation into "good" (natural, medical)
+                  and "bad" (nuclear weapons, food irradiation). In reality all
+                  ionising radiation follows the same physical rules. What
+                  matters is dose and exposure time, not origin.
+                  <cite>(Henriksen &amp; Jorde, 2001)</cite></span
+                >
+                <span class="misc-cue" aria-hidden="true">Tap to find out</span>
+              </button>
+
+              <button class="misc-item" aria-expanded="false">
+                <span class="misc-tag">Radiation accumulates</span>
+                <span class="misc-teaser"
+                  >Radiation builds up inside your body over time.</span
+                >
+                <span class="misc-body"
+                  >Radiation does not accumulate inside you. Once a particle
+                  passes through, it is gone. There is no stored dose waiting to
+                  cause harm later from a single low-level exposure.
+                  <cite>(Eijkelhof, 1990)</cite></span
+                >
+                <span class="misc-cue" aria-hidden="true">Tap to find out</span>
+              </button>
+
+              <button class="misc-item" aria-expanded="false">
+                <span class="misc-tag">All or nothing shielding</span>
+                <span class="misc-teaser"
+                  >Either radiation gets through a shield, or none of it
+                  does.</span
+                >
+                <span class="misc-body"
+                  >Shielding reduces radiation, it does not switch it off.
+                  Thicker material means fewer particles reaching the other
+                  side, not zero particles. There is always a gradient, not a
+                  wall.
+                  <cite
+                    >(Eijkelhof et al., 1990; Riesch &amp; Westphal, 1975)</cite
+                  ></span
+                >
+                <span class="misc-cue" aria-hidden="true">Tap to find out</span>
+              </button>
+
+              <button class="misc-item" aria-expanded="false">
+                <span class="misc-tag"
+                  >Source and radiation are the same thing</span
+                >
+                <span class="misc-teaser"
+                  >A radioactive object is the same as the radiation it gives
+                  off.</span
+                >
+                <span class="misc-body"
+                  >A radioactive source and the radiation it emits are two
+                  different things. The source stays put. The radiation travels
+                  away from it. Removing the source stops new radiation
+                  arriving, but does not cancel radiation already in transit.
+                  <cite>(Neumann &amp; Hopf, 2012)</cite></span
+                >
+                <span class="misc-cue" aria-hidden="true">Tap to find out</span>
+              </button>
+
+              <button class="misc-item" aria-expanded="false">
+                <span class="misc-tag">All radiation is the same threat</span>
+                <span class="misc-teaser"
+                  >Mobile phone signals and gamma rays are equally
+                  harmful.</span
+                >
+                <span class="misc-body"
+                  >Not all radiation is ionising. Mobile phones emit
+                  non-ionising radiation with too little energy per photon to
+                  knock electrons off atoms. Gamma rays are ionising. The
+                  detector only responds to the ionising kind.
+                  <cite>(Rego &amp; Peralta, 2005)</cite></span
+                >
+                <span class="misc-cue" aria-hidden="true">Tap to find out</span>
+              </button>
+            </div>
+
+            <div class="misc-trigger">
+              <p>
+                What else around you could you test with the detector? Do you
+                have your own idea?
+              </p>
+              <p class="misc-trigger__note">
+                Check with your teacher before you try it.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ THE DETECTOR ============ -->
+      <section class="part" id="detector">
+        <div class="wrap">
+          <h2 class="part__title">The Detector</h2>
+          <p class="part__intro">What you need to know before using it.</p>
+
+          <article class="card">
+            <h3>What it is</h3>
+            <div class="card-split">
+              <img
+                src="assets/MiniPIX.png"
+                alt=""
+                class="card-split__img"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="card-split__body">
+                <p>
+                  The MiniPIX is a tiny radiation camera. It was designed at
+                  CERN, the giant physics lab in Switzerland, and the same kind
+                  of chip is used in space to watch the radiation around
+                  astronauts. What it does is turn something invisible into a
+                  picture you can see.
+                </p>
+              </div>
+            </div>
+            <figure class="media">
+              <img
+                src="assets/minipix.jpg"
+                alt="MiniPIX detector"
+                onerror="this.src = 'assets/placeholder-minipix.svg'"
+              />
+            </figure>
+          </article>
+
+          <article class="card card--tint">
+            <h3>How it sees radiation</h3>
+            <p>
+              Under the cover is a grid of tiny squares called pixels, 256
+              across and 256 down. When a particle shoots through, it switches
+              on the pixels in its path and leaves a mark. Counting and reading
+              those marks is the whole game.
+            </p>
+            <p class="readout">
+              256 &times; 256 pixels &nbsp; up to 45 frames per second &nbsp; 1
+              ms minimum exposure
+            </p>
+            <p class="note">
+              Different particles leave very different marks. Go back to Theory
+              to see how the tracks compare.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Pixet Basic</h3>
+            <p>
+              You control the detector with a program called Pixet Basic. Tap
+              the numbered markers below to find out what each part does.
+            </p>
+            <div class="hotspot" id="pixetHotspots">
+              <img
+                src="assets/pixet-screenshot.jpg"
+                alt="Pixet Basic software window"
+                class="hotspot__img"
+                onerror="this.src = 'assets/placeholder-pixet.svg'"
+              />
+              <button
+                class="hotspot__dot"
+                style="left: 15%; top: 10%"
+                data-title="Top bar"
+                data-body="The toolbar at the top gives quick access to the main controls, including opening and saving measurement files."
+              >
+                1
+              </button>
+              <button
+                class="hotspot__dot"
+                style="left: 50%; top: 50%"
+                data-title="Image"
+                data-body="The large central area shows the live detector output. Each bright mark is a pixel that was hit by a particle during the measurement."
+              >
+                2
+              </button>
+              <button
+                class="hotspot__dot"
+                style="left: 88%; top: 12%"
+                data-title="Image properties and Measurement"
+                data-body="This panel is where you set the parameters for data acquisition. You control how long each measurement runs (exposure time) and how many frames to take."
+              >
+                3
+              </button>
+              <button
+                class="hotspot__dot"
+                style="left: 88%; top: 40%"
+                data-title="Image info"
+                data-body="After a measurement this panel shows statistics about the image, including the total number of pixel hits and the detected energy."
+              >
+                4
+              </button>
+              <button
+                class="hotspot__dot"
+                style="left: 88%; top: 68%"
+                data-title="Spectra"
+                data-body="The Spectra panel shows a histogram. The horizontal axis is energy and the vertical axis is how many pixels recorded that energy level. It lets you see whether you caught mostly low-energy background or a high-energy peak."
+              >
+                5
+              </button>
+              <button
+                class="hotspot__dot"
+                style="left: 95%; top: 95%"
+                data-title="Status bar"
+                data-body="The bar at the bottom shows the current state of the detector and confirms whether it is connected and ready."
+              >
+                6
+              </button>
+            </div>
+            <div class="hotspot__panel" id="hotspotPanel" aria-live="polite">
+              <p class="hotspot__hint">
+                Tap a numbered marker to find out what it does.
+              </p>
+            </div>
+          </article>
+
+          <article class="card card--tint">
+            <h3>Handling and safety</h3>
+
+            <ul class="checklist">
+              <li>
+                The sensor is fragile. Keep the cover on whenever you are not
+                measuring.
+              </li>
+              <li>
+                Never touch the sensor. Never rest a sample on it. Keep it dry.
+              </li>
+              <li>
+                For measuring the room, point it upward, away from falling dust.
+              </li>
+              <li>
+                If it gets wet or dirty, stop, put it away, and tell your
+                teacher. Do not wipe or blow on it.
+              </li>
+            </ul>
+            <p class="note note--strong">
+              The radiation you will measure is the natural, low-level kind that
+              is around us all the time. The care here is to protect the
+              instrument, not because the samples are dangerous.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ EXPONENTIAL DECAY ============ -->
+      <section class="part part--alt" id="decay">
+        <div class="wrap">
+          <h2 class="part__title">Exponential decay</h2>
+          <p class="decay-intro">
+            Several activities ask you to watch a count fall over time. The
+            pattern it follows is called exponential decay, and it is one of the
+            most recognisable shapes in science. Understanding it before you
+            measure will help you know whether your data looks right.
+          </p>
+
+          <div class="decay-text">
+            <p>
+              Every radioactive nucleus has a fixed chance of decaying in any
+              given second. That means the more nuclei you start with, the
+              faster the count falls. But as the count falls, so does the rate
+              of falling. The result is a curve that drops steeply at first and
+              flattens out, always halving in the same amount of time. That
+              fixed time is the half-life.
+            </p>
+            <p>
+              When you measure with the detector, you count particle hits per
+              unit time rather than nuclei directly. The shape is the same
+              curve, but the axes change. Your counts will start high and fall
+              in the same halving pattern. Small bumps and dips are normal,
+              because radioactive decay is random and each measurement has
+              natural scatter.
+            </p>
+          </div>
+          <img
+            src="assets/decay.png"
+            alt="Exponential decay curve showing count falling steeply then flattening over time"
+            class="decay-img"
+            onerror="this.style.display = 'none'"
+          />
+
+          <article class="card" style="margin-top: 10px">
+            <h3>The key idea to carry to the bench</h3>
+            <p>
+              If your count is falling and the fall is slowing down, you are
+              looking at exponential decay. You do not need to see the full
+              curve to recognise it. A few points that roughly halve over equal
+              time intervals is enough. In Activity 3 the half-life is roughly
+              50 minutes. In Activity 4 you will use your count to estimate a
+              half-life that is over a billion years.
+            </p>
+          </article>
+        </div>
+        <img
+          src="assets/airplane.png"
+          alt=""
+          style="
+            display: block;
+            margin: 16px auto;
+            width: 260px;
+            max-width: 100%;
+          "
+          onerror="this.style.display = 'none'"
+        />
+      </section>
+
+      <!-- ============ ACTIVITIES ============ -->
+      <section class="part" id="activities">
+        <div class="wrap">
+          <h2 class="part__title">Activities</h2>
+          <p class="part__intro">
+            Each one starts with a question and a guess. When your teacher says
+            go, open the worksheet and fill it in as you measure.
+          </p>
+
+          <div class="preview-grid">
+            <article class="preview-card">
+              <span class="preview-num">Activity 01</span>
+              <img
+                src="assets/laptop.png"
+                alt="Illustration for Activity 1"
+                class="preview-card__img"
+                onerror="this.style.display = 'none'"
+              />
+              <h3>Is an empty room really empty?</h3>
+              <p>
+                Switch the detector on with nothing in front of it. Most people
+                expect a blank screen. Watch what actually shows up. You will
+                learn to read the tracks at the same time.
+              </p>
+              <a class="btn" href="activity-1.html">Open worksheet</a>
+            </article>
+
+            <article class="preview-card">
+              <span class="preview-num">Activity 02</span>
+              <img
+                src="assets/banana.png"
+                alt="Illustration for Activity 2"
+                class="preview-card__img"
+                onerror="this.style.display = 'none'"
+              />
+              <h3>Can a banana be radioactive?</h3>
+              <p>
+                Test everyday food and kitchen items, banana, coffee, salt
+                substitute, and see which ones make the detector light up more
+                than the empty room. The reason why is hiding in your lunch.
+              </p>
+              <a class="btn" href="activity-2.html">Open worksheet</a>
+            </article>
+
+            <article class="preview-card">
+              <span class="preview-num">Activity 03</span>
+              <img
+                src="assets/balloon.png"
+                alt="Illustration for Activity 3"
+                class="preview-card__img"
+                onerror="this.style.display = 'none'"
+              />
+              <h3>Radon in the air</h3>
+              <p>
+                Rub a balloon with wool and leave it hanging in the room. Then
+                hold it near the detector. Something invisible in the air has
+                been sticking to its surface.
+              </p>
+              <a class="btn" href="activity-3.html">Open worksheet</a>
+            </article>
+
+            <article class="preview-card">
+              <span class="preview-num">Activity 04</span>
+              <img
+                src="assets/salt.png"
+                alt="Illustration for Activity 4"
+                class="preview-card__img"
+                onerror="this.style.display = 'none'"
+              />
+              <h3>How slowly does potassium decay?</h3>
+              <p>
+                Measure a pinch of salt substitute and count the electrons it
+                gives off. Then use your count to work out how old the universe
+                would have to be for half of it to disappear.
+              </p>
+              <a class="btn" href="activity-4.html">Open worksheet</a>
+            </article>
+
+            <article class="preview-card">
+              <span class="preview-num">Activity 05</span>
+              <img
+                src="assets/vacuum-cleaner.png"
+                alt="Illustration for Activity 5"
+                class="preview-card__img"
+                onerror="this.style.display = 'none'"
+              />
+              <h3>Pulling radon out of the air</h3>
+              <p>
+                Run a vacuum cleaner for a few minutes, then put the filter near
+                the detector. Compare a room before and after you open the
+                windows.
+              </p>
+              <a class="btn" href="activity-5.html">Open worksheet</a>
+            </article>
+
+            <article class="preview-card">
+              <span class="preview-num">Activity 06</span>
+              <img
+                src="assets/satellite.png"
+                alt="Illustration for Activity 6"
+                class="preview-card__img"
+                onerror="this.style.display = 'none'"
+              />
+              <h3>Does radiation increase with altitude?</h3>
+              <p>
+                Compare detector images from the Earth surface, an airplane, and
+                a satellite. Use track density and shapes to work out what
+                changes as the atmosphere gets thinner.
+              </p>
+              <a class="btn" href="activity-6.html">Open worksheet</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <p class="foot__prov">
+          © 2026 TIMEPIX@school. Licensed under
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            style="color: inherit; text-decoration: underline"
+            >CC BY-SA 4.0</a
+          >.
+        </p>
+        <p class="foot__flag">Prototype for review.</p>
+      </div>
+    </footer>
+
+    <script src="js/lesson.js"></script>
+  </body>
+</html>

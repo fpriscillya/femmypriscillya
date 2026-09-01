@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 4 | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/worksheet.css" />
+  </head>
+  <body class="ws">
+    <div class="ws-bar">
+      <div class="ws-bar__inner">
+        <span class="ws-bar__brand">
+          <a href="index.html" aria-label="Home"
+            ><img
+              src="assets/timepix-logo.svg"
+              alt="TIMEPIX@school"
+              onerror="this.style.display = 'none'"
+          /></a>
+          Seeing the Invisible
+        </span>
+        <span class="ws-bar__actions">
+          <a class="ws-back" href="index.html">Back to the lesson</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet__head">
+        <img
+          src="assets/salt.png"
+          alt="Activity 4 illustration"
+          class="sheet__hero-img"
+          onerror="this.style.display = 'none'"
+        />
+        <p class="sheet__eyebrow">Activity 4</p>
+        <h1>How slowly does potassium-40 decay?</h1>
+        <p class="sheet__sub">
+          Predict first, then observe, then explain. Lock in your prediction
+          before you start measuring.
+        </p>
+      </div>
+
+      <div class="idrow">
+        <label>Name <input type="text" /></label>
+        <label>Partner(s) <input type="text" /></label>
+        <label>Date <input type="text" /></label>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--predict"
+          >Predict, before you measure</span
+        >
+        <h2>Will a pinch of salt give more beta tracks than the background?</h2>
+        <p class="guide">
+          You are about to measure 2.0 g of low-sodium salt substitute (KCl).
+          Pick what you think will happen.
+        </p>
+
+        <div class="iradio-group" id="ir4">
+          <label class="iradio"
+            ><input type="radio" name="ir4" /> Yes, clearly more beta tracks
+            than the background</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir4" /> About the same as the
+            background</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir4" /> Fewer than the background</label
+          >
+        </div>
+
+        <p class="guide" style="margin-top: 20px">
+          How confident are you? Tap one.
+        </p>
+        <div class="conf-group" id="confGroup4">
+          <button class="conf-btn" type="button">Just guessing</button>
+          <button class="conf-btn" type="button">Fairly confident</button>
+          <button class="conf-btn" type="button">Very confident</button>
+        </div>
+
+        <p class="guide" style="margin-top: 16px">Explain your reasoning.</p>
+        <textarea rows="3"></textarea>
+
+        <button class="pred-lock-btn" id="lock4" style="margin-top: 16px">
+          Lock in my prediction
+        </button>
+        <p class="pred-confirmed" id="conf4">
+          Prediction locked. You will find out at the bench.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--observe"
+          >Observe, Part 1: Background</span
+        >
+        <h2>Background measurement</h2>
+        <p class="guide">
+          Settings: Integral mode, 60 frames, 10 s each, total 600 s. Count long
+          curved worm tracks only. Zoom in on each and confirm the deposited
+          energy is above 700 keV before counting it.
+        </p>
+
+        <span class="field-inline"
+          >Worm tracks counted <input type="text"
+        /></span>
+        <span class="field-inline"
+          >Background rate (count divided by 600 s)
+          <input type="text" /> Bq</span
+        >
+        <p class="hint">
+          If you ran a second background measurement, note it here.
+        </p>
+        <textarea rows="2"></textarea>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--observe"
+          >Observe, Part 2: KCl sample</span
+        >
+        <h2>KCl measurement (2.0 g)</h2>
+        <p class="guide">
+          Same settings as the background. Count and verify each worm track
+          above 700 keV.
+        </p>
+
+        <span class="field-inline"
+          >Worm tracks counted <input type="text"
+        /></span>
+        <span class="field-inline"
+          >KCl rate (count divided by 600 s) <input type="text" /> Bq</span
+        >
+        <p class="hint">Second run result if you repeated it.</p>
+        <textarea rows="2"></textarea>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--explain">Explain</span>
+        <h2>Work out the half-life, step by step</h2>
+        <p class="guide">Write each answer yourself.</p>
+
+        <table class="ws-table">
+          <thead>
+            <tr>
+              <th style="width: 60%">Step</th>
+              <th>Your answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fixed">
+                1. Net rate = KCl rate minus background rate
+              </td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">
+                2. Corrected activity = net rate multiplied by 5
+              </td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">
+                3. Mass of K-40 in your sample (KCl is 52% potassium, natural
+                potassium is 0.012% K-40)
+              </td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">
+                4. Number of K-40 atoms (divide mass by 40 g/mol, multiply by
+                6.022 times 10 to the 23)
+              </td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">
+                5. Half-life estimate using Activity = 0.693 divided by
+                half-life, multiplied by number of atoms
+              </td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">
+                6. How does your estimate compare with the accepted value of
+                1.25 billion years?
+              </td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="guide" style="margin-top: 16px">
+          Does "radioactive" mean "dangerous" in this case? What does this tell
+          you about everyday materials?
+        </p>
+        <textarea rows="4"></textarea>
+      </div>
+
+      <div class="pred-summary" id="summary4">
+        <h4>Your predictions</h4>
+        <ul class="pred-summary__list" id="summaryList4"></ul>
+        <p class="pred-summary__note">
+          Keep these in mind before you start measuring.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".iradio").forEach((label) => {
+        label.addEventListener("click", () => {
+          const name = label.querySelector("input").name;
+          document
+            .querySelectorAll('.iradio input[name="' + name + '"]')
+            .forEach((inp) => {
+              inp.closest(".iradio").classList.remove("selected");
+            });
+          label.classList.add("selected");
+        });
+      });
+
+      document.querySelectorAll(".conf-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".conf-btn")
+            .forEach((b) => b.classList.remove("selected"));
+          btn.classList.add("selected");
+        });
+      });
+
+      document.getElementById("lock4").addEventListener("click", function () {
+        this.disabled = true;
+        document.querySelectorAll(".iradio, .conf-btn").forEach((el) => {
+          el.style.pointerEvents = "none";
+          if (!el.classList.contains("selected")) el.style.opacity = ".4";
+        });
+        document.getElementById("conf4").classList.add("show");
+
+        const pred = document.querySelector(
+          '.iradio input[name="ir4"]:checked',
+        );
+        const conf = document.querySelector(".conf-btn.selected");
+        const ul = document.getElementById("summaryList4");
+        ul.innerHTML =
+          '<li><span class="pred-summary__q">Will KCl give more beta tracks than background?</span>' +
+          '<span class="pred-summary__a">' +
+          (pred ? pred.closest(".iradio").textContent.trim() : "No answer") +
+          "</span></li>" +
+          '<li><span class="pred-summary__q">Confidence level</span>' +
+          '<span class="pred-summary__a">' +
+          (conf ? conf.textContent.trim() : "Not rated") +
+          "</span></li>";
+        document.getElementById("summary4").classList.add("show");
+      });
+    </script>
+  </body>
+</html>

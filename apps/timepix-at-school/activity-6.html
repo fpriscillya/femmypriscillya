@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 6 | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/worksheet.css" />
+    <style>
+      /* ---- activity-6 local styles ---- */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 20px 0 10px;
+      }
+      .image-card {
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--bg-soft);
+        text-align: center;
+      }
+      .image-card img {
+        width: 100%;
+        display: block;
+        filter: blur(10px);
+        transition: filter 0s;
+      }
+      .image-card img.revealed { filter: none; }
+      .image-card figcaption {
+        padding: 8px 10px;
+        font-size: .85rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .image-card figcaption span {
+        display: block;
+        font-size: .75rem;
+        font-weight: 400;
+        color: var(--ink-60);
+      }
+      .reveal-btn {
+        display: block;
+        margin: 16px auto 0;
+        background: var(--teal);
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        padding: 12px 30px;
+        font-family: var(--font);
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background .12s;
+      }
+      .reveal-btn:hover { background: #18a3a1; }
+      .reveal-note {
+        text-align: center;
+        font-size: .85rem;
+        color: var(--ink-60);
+        font-style: italic;
+        margin-top: 8px;
+      }
+      @media (max-width: 600px) {
+        .image-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body class="ws">
+
+    <div class="ws-bar">
+      <div class="ws-bar__inner">
+        <span class="ws-bar__brand">
+          <a href="index.html" aria-label="Home">
+            <img
+              src="assets/timepix-logo.svg"
+              alt="TIMEPIX@school"
+              onerror="this.style.display='none'"
+            />
+          </a>
+          Seeing the Invisible
+        </span>
+        <span class="ws-bar__actions">
+          <a class="ws-back" href="index.html">Back to the lesson</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet__head">
+        <img
+          src="assets/satellite.png"
+          alt="Activity 6 illustration"
+          class="sheet__hero-img"
+          onerror="this.style.display='none'"
+        />
+        <p class="sheet__eyebrow">Activity 6</p>
+        <h1>Does radiation increase with altitude?</h1>
+        <p class="sheet__sub">
+          Make your predictions before the images are revealed. Lock them in,
+          then compare three real detector images to see whether the evidence
+          matches what you expected.
+        </p>
+      </div>
+
+      <div class="idrow">
+        <label>Name <input type="text" /></label>
+        <label>Partner(s) <input type="text" /></label>
+        <label>Date <input type="text" /></label>
+      </div>
+
+      <!-- ============ PREDICT ============ -->
+      <div class="step">
+        <span class="step__tag step__tag--predict">Predict, before the images are revealed</span>
+        <h2>Two questions about altitude and radiation</h2>
+
+        <p class="guide">
+          <strong>Question 1.</strong> The same detector runs for the same time
+          at three locations: on the Earth surface, on an airplane, and on a
+          satellite. Rank them from fewest to most visible tracks.
+        </p>
+        <div class="iradio-group" id="ir6a">
+          <label class="iradio">
+            <input type="radio" name="ir6a" />
+            Satellite, then airplane, then Earth surface (most tracks at ground level)
+          </label>
+          <label class="iradio">
+            <input type="radio" name="ir6a" />
+            Earth surface, then airplane, then satellite (most tracks in space)
+          </label>
+          <label class="iradio">
+            <input type="radio" name="ir6a" />
+            About the same at all three locations
+          </label>
+        </div>
+
+        <p class="guide" style="margin-top:20px">
+          <strong>Question 2.</strong> If the track count does change with
+          altitude, what is the most likely reason?
+        </p>
+        <div class="iradio-group" id="ir6b">
+          <label class="iradio">
+            <input type="radio" name="ir6b" />
+            The atmosphere absorbs or deflects some particles before they reach
+            the ground, so fewer tracks appear at lower altitudes
+          </label>
+          <label class="iradio">
+            <input type="radio" name="ir6b" />
+            Gravity pulls radiation downward, so most particles collect near the
+            ground
+          </label>
+          <label class="iradio">
+            <input type="radio" name="ir6b" />
+            The detector works differently in space because of temperature
+            changes
+          </label>
+        </div>
+
+        <p class="guide" style="margin-top:16px">
+          Write your reasoning in your own words.
+        </p>
+        <textarea rows="3"></textarea>
+
+        <button class="pred-lock-btn" id="lock6" disabled style="margin-top:16px">
+          Lock in my predictions
+        </button>
+        <p class="pred-confirmed" id="conf6">
+          Predictions locked. Now reveal and examine the three images.
+        </p>
+      </div>
+
+      <!-- ============ OBSERVE ============ -->
+      <div class="step">
+        <span class="step__tag step__tag--observe">Observe</span>
+        <h2>Read the detector images</h2>
+
+        <p class="guide">
+          Reveal the images once your predictions are locked. For each one,
+          look at how many tracks you can see, how dense they are, and what
+          shapes appear most often.
+        </p>
+        <p class="hint">
+          Track-shape reminder: dot = photon (X-ray or gamma), curly worm =
+          electron (beta), round blob = alpha, long straight line = muon or
+          other high-energy particle.
+        </p>
+
+        <div class="image-grid" id="imageGrid">
+          <figure class="image-card">
+            <img
+              id="imgEarth"
+              src="assets/image-earth.png"
+              alt="TIMEPIX detector image recorded at the Earth surface"
+            />
+            <figcaption>
+              Image A
+              <span>Earth surface</span>
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img
+              id="imgPlane"
+              src="assets/image-plane.png"
+              alt="TIMEPIX detector image recorded on an airplane"
+            />
+            <figcaption>
+              Image B
+              <span>Airplane</span>
+            </figcaption>
+          </figure>
+          <figure class="image-card">
+            <img
+              id="imgSatellite"
+              src="assets/image-satellite.png"
+              alt="TIMEPIX detector image recorded on a satellite"
+            />
+            <figcaption>
+              Image C
+              <span>Satellite</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <button class="reveal-btn" id="revealBtn" disabled>
+          Reveal the images
+        </button>
+        <p class="reveal-note" id="revealNote">
+          Lock in your predictions first.
+        </p>
+
+        <table class="ws-table" style="margin-top:24px">
+          <thead>
+            <tr>
+              <th>Location</th>
+              <th>Track density (sparse, medium, dense)</th>
+              <th>Most common track shape(s)</th>
+              <th>One specific thing you notice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fixed">A. Earth surface</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">B. Airplane</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">C. Satellite</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="guide" style="margin-top:18px">
+          Drag to order the three locations from fewest to most visible tracks,
+          based on what you actually see. Tap the arrow on mobile to move an
+          item up.
+        </p>
+
+        <ul class="rank-list" id="rankList6">
+          <li class="rank-item" draggable="true" data-sample="A. Earth surface">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">1</span>
+            <span>A. Earth surface</span>
+          </li>
+          <li class="rank-item" draggable="true" data-sample="B. Airplane">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">2</span>
+            <span>B. Airplane</span>
+          </li>
+          <li class="rank-item" draggable="true" data-sample="C. Satellite">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">3</span>
+            <span>C. Satellite</span>
+          </li>
+        </ul>
+        <p class="hint">1 = fewest tracks, 3 = most tracks.</p>
+
+        <p class="guide" style="margin-top:16px">
+          How do the track shapes or lengths change between the three images?
+        </p>
+        <textarea rows="3"></textarea>
+      </div>
+
+      <!-- ============ EXPLAIN ============ -->
+      <div class="step">
+        <span class="step__tag step__tag--explain">Explain</span>
+        <h2>What does it mean?</h2>
+
+        <p class="guide">
+          Did the images match your prediction? Explain why the number of tracks
+          changes with altitude, and what role the atmosphere plays. Then say
+          whether your original prediction was supported, and if not, what you
+          would change about your reasoning.
+        </p>
+        <textarea rows="7"></textarea>
+
+        <p class="guide" style="margin-top:16px">
+          Why does a fair comparison between the three images require the same
+          detector area, the same measurement time, and the same display
+          settings?
+        </p>
+        <textarea rows="3"></textarea>
+      </div>
+
+      <!-- prediction summary -->
+      <div class="pred-summary" id="summary6">
+        <h4>Your predictions</h4>
+        <ul class="pred-summary__list" id="summaryList6"></ul>
+        <p class="pred-summary__note">
+          Compare these with what you actually saw in the images.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const QUESTIONS_6 = [
+        {
+          q: 'Predicted order, fewest to most tracks',
+          name: 'ir6a'
+        },
+        {
+          q: 'Most likely reason for the change',
+          name: 'ir6b'
+        }
+      ];
+
+      const lockBtn   = document.getElementById('lock6');
+      const revealBtn = document.getElementById('revealBtn');
+      const revealNote = document.getElementById('revealNote');
+
+      // enable lock button only when both questions answered
+      function checkLock() {
+        const allAnswered = QUESTIONS_6.every(q =>
+          document.querySelector('.iradio input[name="' + q.name + '"]:checked')
+        );
+        lockBtn.disabled = !allAnswered;
+      }
+
+      document.querySelectorAll('.iradio').forEach(label => {
+        label.addEventListener('click', () => {
+          const name = label.querySelector('input').name;
+          document.querySelectorAll('.iradio input[name="' + name + '"]').forEach(inp => {
+            inp.closest('.iradio').classList.remove('selected');
+          });
+          label.classList.add('selected');
+          checkLock();
+        });
+      });
+
+      // lock predictions
+      lockBtn.addEventListener('click', function () {
+        this.disabled = true;
+
+        document.querySelectorAll('.iradio').forEach(l => {
+          l.style.pointerEvents = 'none';
+          if (!l.classList.contains('selected')) l.style.opacity = '.4';
+        });
+
+        document.getElementById('conf6').classList.add('show');
+
+        // build summary
+        const ul = document.getElementById('summaryList6');
+        ul.innerHTML = '';
+        QUESTIONS_6.forEach(q => {
+          const checked = document.querySelector(
+            '.iradio input[name="' + q.name + '"]:checked'
+          );
+          const li = document.createElement('li');
+          li.innerHTML =
+            '<span class="pred-summary__q">' + q.q + '</span>' +
+            '<span class="pred-summary__a">' +
+            (checked ? checked.closest('.iradio').textContent.trim() : 'No answer') +
+            '</span>';
+          ul.appendChild(li);
+        });
+        document.getElementById('summary6').classList.add('show');
+
+        // enable reveal button
+        revealBtn.disabled = false;
+        revealNote.textContent = 'Ready. Click to reveal the images.';
+      });
+
+      // reveal images
+      revealBtn.addEventListener('click', function () {
+        document.querySelectorAll('.image-card img').forEach(img => {
+          img.classList.add('revealed');
+        });
+        this.textContent = 'Images revealed';
+        this.disabled = true;
+        revealNote.textContent = 'Fill in the observation table above.';
+        document.getElementById('imageGrid').scrollIntoView({
+          behavior: 'smooth', block: 'start'
+        });
+      });
+      // drag-and-drop ranking for observe section
+      (function rankList() {
+        const list = document.getElementById('rankList6');
+        if (!list) return;
+        let dragged = null;
+
+        list.querySelectorAll('.rank-item').forEach(item => {
+          item.addEventListener('dragstart', () => {
+            dragged = item;
+            setTimeout(() => item.classList.add('dragging'), 0);
+          });
+          item.addEventListener('dragend', () => {
+            item.classList.remove('dragging');
+            dragged = null;
+            updateNums6();
+          });
+          item.addEventListener('dragover', e => {
+            e.preventDefault();
+            item.classList.add('drag-over');
+          });
+          item.addEventListener('dragleave', () => item.classList.remove('drag-over'));
+          item.addEventListener('drop', e => {
+            e.preventDefault();
+            item.classList.remove('drag-over');
+            if (dragged && dragged !== item) {
+              const items = [...list.querySelectorAll('.rank-item')];
+              const di = items.indexOf(dragged), ti = items.indexOf(item);
+              list.insertBefore(dragged, di < ti ? item.nextSibling : item);
+              updateNums6();
+            }
+          });
+        });
+
+        list.querySelectorAll('.rank-handle').forEach(handle => {
+          handle.addEventListener('click', () => {
+            const item = handle.closest('.rank-item');
+            const items = [...list.querySelectorAll('.rank-item')];
+            const idx = items.indexOf(item);
+            if (idx > 0) { list.insertBefore(item, items[idx - 1]); updateNums6(); }
+          });
+        });
+
+        function updateNums6() {
+          list.querySelectorAll('.rank-item').forEach((item, i) => {
+            item.querySelector('.rank-num').textContent = i + 1;
+          });
+        }
+      })();
+
+  </body>
+</html>

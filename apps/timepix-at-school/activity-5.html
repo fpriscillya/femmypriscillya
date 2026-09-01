@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 5 | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/worksheet.css" />
+  </head>
+  <body class="ws">
+    <div class="ws-bar">
+      <div class="ws-bar__inner">
+        <span class="ws-bar__brand">
+          <a href="index.html" aria-label="Home"
+            ><img
+              src="assets/timepix-logo.svg"
+              alt="TIMEPIX@school"
+              onerror="this.style.display = 'none'"
+          /></a>
+          Seeing the Invisible
+        </span>
+        <span class="ws-bar__actions">
+          <a class="ws-back" href="index.html">Back to the lesson</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet__head">
+        <img
+          src="assets/vacuum-cleaner.png"
+          alt="Activity 5 illustration"
+          class="sheet__hero-img"
+          onerror="this.style.display = 'none'"
+        />
+        <p class="sheet__eyebrow">Activity 5</p>
+        <h1>Pulling radon out of the air</h1>
+        <p class="sheet__sub">
+          Your teacher will tell you whether you are doing Level 1 (Phases 1 to
+          3) or Level 2 (all five phases plus decay readings). Predict first,
+          then observe, then explain.
+        </p>
+      </div>
+
+      <div class="idrow">
+        <label>Name <input type="text" /></label>
+        <label>Partner(s) <input type="text" /></label>
+        <label>Date <input type="text" /></label>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--predict">Before you start</span>
+        <h2>Your level</h2>
+        <div class="iradio-group" id="irLevel">
+          <label class="iradio"
+            ><input type="radio" name="irLevel" /> Level 1, demo, Phases 1 to
+            3</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="irLevel" /> Level 2, full investigation,
+            all five phases</label
+          >
+        </div>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--predict"
+          >Predict, before Phase 1</span
+        >
+        <h2>Two questions about the air</h2>
+
+        <p class="guide">
+          <strong>Question 1.</strong> You vacuum floor-level indoor air through
+          a tissue and place it near the detector. Compared with the background,
+          the tissue will give...
+        </p>
+        <div class="iradio-group" id="ir5a">
+          <label class="iradio"
+            ><input type="radio" name="ir5a" /> Clearly more alpha tracks</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir5a" /> About the same as the
+            background</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir5a" /> Fewer alpha tracks</label
+          >
+        </div>
+
+        <p class="guide" style="margin-top: 20px">
+          <strong>Question 2.</strong> After opening the windows and airing the
+          room for 20 minutes, the count from a new tissue will...
+        </p>
+        <div class="iradio-group" id="ir5b">
+          <label class="iradio"
+            ><input type="radio" name="ir5b" /> Go up compared with the un-aired
+            tissue</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir5b" /> Stay about the same</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir5b" /> Go down compared with the
+            un-aired tissue</label
+          >
+        </div>
+
+        <p class="guide" style="margin-top: 16px">Explain your reasoning.</p>
+        <textarea rows="3"></textarea>
+
+        <button class="pred-lock-btn" id="lock5" style="margin-top: 16px">
+          Lock in my predictions
+        </button>
+        <p class="pred-confirmed" id="conf5">
+          Predictions locked. You will find out at the bench.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--observe">Observe, Phases 1 to 5</span>
+        <h2>Alpha counts across all phases</h2>
+        <p class="guide">
+          Settings for every phase: Tracking mode, Sum on, 900 frames, 1 s each,
+          15 minutes total. Record the alpha blob count and start time for each
+          phase.
+        </p>
+
+        <table class="ws-table">
+          <thead>
+            <tr>
+              <th style="width: 8%">Phase</th>
+              <th style="width: 32%">What you did</th>
+              <th>Alpha blob count</th>
+              <th>Start time</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fixed">1</td>
+              <td class="fixed">Background, windows closed</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">2</td>
+              <td class="fixed">Clean tissue (control)</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">3</td>
+              <td class="fixed">Indoor air, un-aired room</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">4</td>
+              <td class="fixed">Outdoor air through window</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">5</td>
+              <td class="fixed">Indoor air, after airing</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--observe"
+          >Observe, Level 2 only: decay readings</span
+        >
+        <h2>Extra readings from the Phase 3 tissue</h2>
+        <p class="guide">
+          Keep the same tissue from Phase 3. Take three more readings one hour
+          apart on the same day, then two per day on the next two days. Record
+          alpha and worm (electron) counts separately.
+        </p>
+
+        <table class="ws-table">
+          <thead>
+            <tr>
+              <th>Reading</th>
+              <th>Date and time</th>
+              <th>Alpha blob count</th>
+              <th>Worm count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fixed">Phase 3 (reference)</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 1, reading 2</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 1, reading 3</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 1, reading 4</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 2, morning</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 2, evening</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 3, morning</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td class="fixed">Day 3, evening</td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="guide" style="margin-top: 14px">
+          Sketch or describe the shape of the alpha-count-vs-time graph from
+          your decay readings.
+        </p>
+        <textarea rows="4"></textarea>
+
+        <p class="guide">
+          Using your decay data, estimate the mean-life of the radon decay
+          products. Show your working.
+        </p>
+        <textarea rows="5"></textarea>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--explain">Explain</span>
+        <h2>What does it mean?</h2>
+        <p class="guide">
+          Compare the alpha counts across the five phases. Did Phase 3 give
+          clearly more than Phases 1 and 2? Did airing the room bring the count
+          back down? If the counts were similar across all phases, what might
+          explain that? Does finding radioactivity in indoor air mean the room
+          is dangerous? Justify your answer.
+        </p>
+        <textarea rows="7"></textarea>
+      </div>
+
+      <div class="pred-summary" id="summary5">
+        <h4>Your predictions</h4>
+        <ul class="pred-summary__list" id="summaryList5"></ul>
+        <p class="pred-summary__note">
+          Keep these in mind when the tissue goes near the detector.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".iradio").forEach((label) => {
+        label.addEventListener("click", () => {
+          const name = label.querySelector("input").name;
+          document
+            .querySelectorAll('.iradio input[name="' + name + '"]')
+            .forEach((inp) => {
+              inp.closest(".iradio").classList.remove("selected");
+            });
+          label.classList.add("selected");
+        });
+      });
+
+      document.getElementById("lock5").addEventListener("click", function () {
+        this.disabled = true;
+        ["ir5a", "ir5b"].forEach((id) => {
+          document.querySelectorAll("#" + id + " .iradio").forEach((l) => {
+            l.style.pointerEvents = "none";
+            if (!l.classList.contains("selected")) l.style.opacity = ".4";
+          });
+        });
+        document.getElementById("conf5").classList.add("show");
+
+        const a1 = document.querySelector('.iradio input[name="ir5a"]:checked');
+        const a2 = document.querySelector('.iradio input[name="ir5b"]:checked');
+        const ul = document.getElementById("summaryList5");
+        ul.innerHTML =
+          '<li><span class="pred-summary__q">Indoor tissue vs background</span>' +
+          '<span class="pred-summary__a">' +
+          (a1 ? a1.closest(".iradio").textContent.trim() : "No answer") +
+          "</span></li>" +
+          '<li><span class="pred-summary__q">Count after opening windows</span>' +
+          '<span class="pred-summary__a">' +
+          (a2 ? a2.closest(".iradio").textContent.trim() : "No answer") +
+          "</span></li>";
+        document.getElementById("summary5").classList.add("show");
+      });
+    </script>
+  </body>
+</html>

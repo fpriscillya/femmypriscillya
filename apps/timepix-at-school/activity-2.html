@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 2 | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/worksheet.css" />
+  </head>
+  <body class="ws">
+    <div class="ws-bar">
+      <div class="ws-bar__inner">
+        <span class="ws-bar__brand">
+          <a href="index.html" aria-label="Home"
+            ><img
+              src="assets/timepix-logo.svg"
+              alt="TIMEPIX@school"
+              onerror="this.style.display = 'none'"
+          /></a>
+          Seeing the Invisible
+        </span>
+        <span class="ws-bar__actions">
+          <a class="ws-back" href="index.html">Back to the lesson</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet__head">
+        <img
+          src="assets/banana.png"
+          alt="Activity 2 illustration"
+          class="sheet__hero-img"
+          onerror="this.style.display = 'none'"
+        />
+        <p class="sheet__eyebrow">Activity 2</p>
+        <h1>Can a banana be radioactive?</h1>
+        <p class="sheet__sub">
+          Predict first, then observe, then explain. Lock in your predictions
+          before you start measuring.
+        </p>
+      </div>
+
+      <div class="idrow">
+        <label>Name <input type="text" /></label>
+        <label>Partner(s) <input type="text" /></label>
+        <label>Date <input type="text" /></label>
+      </div>
+
+      <!-- PREDICT: ranking -->
+      <div class="step">
+        <span class="step__tag step__tag--predict"
+          >Predict, before you measure</span
+        >
+        <h2>Rank the samples from most to least radioactive</h2>
+        <p class="guide">
+          Drag to reorder, or tap the arrows on mobile. Put the one you think
+          will give the most tracks at the top. Then lock in your ranking.
+        </p>
+
+        <ul class="rank-list" id="rankList">
+          <li
+            class="rank-item"
+            draggable="true"
+            data-sample="Banana or banana peel"
+          >
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">1</span>
+            <span>Banana or banana peel</span>
+          </li>
+          <li class="rank-item" draggable="true" data-sample="Pistachios">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">2</span>
+            <span>Pistachios</span>
+          </li>
+          <li class="rank-item" draggable="true" data-sample="Chickpeas">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">3</span>
+            <span>Chickpeas</span>
+          </li>
+          <li class="rank-item" draggable="true" data-sample="Potato with skin">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">4</span>
+            <span>Potato with skin</span>
+          </li>
+          <li
+            class="rank-item"
+            draggable="true"
+            data-sample="Low-sodium salt (KCl)"
+          >
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">5</span>
+            <span>Low-sodium salt (KCl)</span>
+          </li>
+          <li class="rank-item" draggable="true" data-sample="Ground coffee">
+            <span class="rank-handle">&#8597;</span>
+            <span class="rank-num">6</span>
+            <span>Ground coffee</span>
+          </li>
+        </ul>
+        <button class="pred-lock-btn" id="lockRank">Lock in my ranking</button>
+        <p class="pred-confirmed" id="confRank">
+          Ranking locked. You will compare it with your results at the end.
+        </p>
+
+        <p class="guide" style="margin-top: 20px">
+          <strong>Why did you rank them this way?</strong> Write your reasoning.
+        </p>
+        <textarea rows="3"></textarea>
+
+        <p class="guide" style="margin-top: 20px">
+          <strong>Extra question.</strong> You measure the banana for the same
+          time as the empty room. Compared with the background count, the banana
+          gives...
+        </p>
+        <div class="pred-options" id="pBanana">
+          <button class="pred-opt" data-q="pBanana" data-i="0">
+            <span class="pred-letter">A</span>More marks
+          </button>
+          <button class="pred-opt" data-q="pBanana" data-i="1">
+            <span class="pred-letter">B</span>About the same
+          </button>
+          <button class="pred-opt" data-q="pBanana" data-i="2">
+            <span class="pred-letter">C</span>Fewer marks
+          </button>
+        </div>
+        <button class="pred-lock-btn" id="lockBanana" disabled>
+          Lock in my answer
+        </button>
+        <p class="pred-confirmed" id="confBanana">Prediction locked.</p>
+
+        <p class="guide" style="margin-top: 20px">
+          <strong>Extra question.</strong> Two groups measure the same sample
+          for the same time. Their counts will be...
+        </p>
+        <div class="pred-options" id="pGroups">
+          <button class="pred-opt" data-q="pGroups" data-i="0">
+            <span class="pred-letter">A</span>Exactly the same
+          </button>
+          <button class="pred-opt" data-q="pGroups" data-i="1">
+            <span class="pred-letter">B</span>Close but not identical
+          </button>
+          <button class="pred-opt" data-q="pGroups" data-i="2">
+            <span class="pred-letter">C</span>Very different
+          </button>
+        </div>
+        <button class="pred-lock-btn" id="lockGroups" disabled>
+          Lock in my answer
+        </button>
+        <p class="pred-confirmed" id="confGroups">Prediction locked.</p>
+      </div>
+
+      <!-- OBSERVE -->
+      <div class="step">
+        <span class="step__tag step__tag--observe">Observe</span>
+        <h2>What did the detector record?</h2>
+
+        <span class="field-inline"
+          >Background tracks in 15 min <input type="text"
+        /></span>
+
+        <table class="ws-table" style="margin-top: 12px">
+          <thead>
+            <tr>
+              <th style="width: 34%">Sample</th>
+              <th>Tracks in 15 min</th>
+              <th>Main track type(s)</th>
+              <th>More than background?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+            <tr>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+              <td><input type="text" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="hint">
+          Track types, dot = photon, worm = electron (beta), blob = alpha,
+          straight = muon.
+        </p>
+      </div>
+
+      <!-- EXPLAIN -->
+      <div class="step">
+        <span class="step__tag step__tag--explain">Explain</span>
+        <h2>What does it mean?</h2>
+        <p class="guide">
+          Which samples were measurably radioactive? Did the result match your
+          ranking? Most of the active samples are rich in potassium. Explain the
+          link and think about potassium-40. Does "radioactive" mean "dangerous"
+          here? Give your reason.
+        </p>
+        <textarea rows="6"></textarea>
+      </div>
+
+      <div class="pred-summary" id="summary2">
+        <h4>Your predictions</h4>
+        <ul class="pred-summary__list" id="summaryList2"></ul>
+        <p class="pred-summary__note">
+          Keep these in mind when you start measuring.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const list = document.getElementById("rankList");
+      let dragged = null;
+      const selects = {};
+
+      list.querySelectorAll(".rank-item").forEach((item) => {
+        item.addEventListener("dragstart", () => {
+          dragged = item;
+          setTimeout(() => item.classList.add("dragging"), 0);
+        });
+        item.addEventListener("dragend", () => {
+          item.classList.remove("dragging");
+          dragged = null;
+          updateNums();
+        });
+        item.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          item.classList.add("drag-over");
+        });
+        item.addEventListener("dragleave", () =>
+          item.classList.remove("drag-over"),
+        );
+        item.addEventListener("drop", (e) => {
+          e.preventDefault();
+          item.classList.remove("drag-over");
+          if (dragged && dragged !== item) {
+            const items = [...list.querySelectorAll(".rank-item")];
+            const di = items.indexOf(dragged),
+              ti = items.indexOf(item);
+            list.insertBefore(dragged, di < ti ? item.nextSibling : item);
+            updateNums();
+          }
+        });
+      });
+
+      list.querySelectorAll(".rank-handle").forEach((handle) => {
+        handle.addEventListener("click", () => {
+          const item = handle.closest(".rank-item");
+          const items = [...list.querySelectorAll(".rank-item")];
+          const idx = items.indexOf(item);
+          if (idx > 0) {
+            list.insertBefore(item, items[idx - 1]);
+            updateNums();
+          }
+        });
+      });
+
+      function updateNums() {
+        list.querySelectorAll(".rank-item").forEach((item, i) => {
+          item.querySelector(".rank-num").textContent = i + 1;
+        });
+      }
+
+      let rankLocked = false;
+      document.getElementById("lockRank").addEventListener("click", () => {
+        list.classList.add("rank-locked");
+        document.getElementById("lockRank").disabled = true;
+        document.getElementById("confRank").classList.add("show");
+        rankLocked = true;
+        maybeShowSummary2();
+      });
+
+      document.querySelectorAll(".pred-opt").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const q = btn.dataset.q;
+          const group = document.getElementById(q);
+          if (group.classList.contains("pred-locked")) return;
+          group
+            .querySelectorAll(".pred-opt")
+            .forEach((b) => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          selects[q] = btn.dataset.i;
+          const lockMap = { pBanana: "lockBanana", pGroups: "lockGroups" };
+          document.getElementById(lockMap[q]).disabled = false;
+        });
+      });
+
+      [
+        ["lockBanana", "pBanana", "confBanana"],
+        ["lockGroups", "pGroups", "confGroups"],
+      ].forEach(([lid, qid, cid]) => {
+        document.getElementById(lid).addEventListener("click", () => {
+          if (selects[qid] === undefined) return;
+          document.getElementById(qid).classList.add("pred-locked");
+          document.getElementById(lid).disabled = true;
+          document.getElementById(cid).classList.add("show");
+          maybeShowSummary2();
+        });
+      });
+
+      const OPTS_BANANA = ["More marks", "About the same", "Fewer marks"];
+      const OPTS_GROUPS = [
+        "Exactly the same",
+        "Close but not identical",
+        "Very different",
+      ];
+
+      function maybeShowSummary2() {
+        if (
+          !rankLocked ||
+          selects["pBanana"] === undefined ||
+          selects["pGroups"] === undefined
+        )
+          return;
+        const items = [...list.querySelectorAll(".rank-item")];
+        const ranking = items
+          .map((el, i) => i + 1 + ". " + el.dataset.sample)
+          .join(", ");
+        const ul = document.getElementById("summaryList2");
+        ul.innerHTML =
+          '<li><span class="pred-summary__q">Your ranking (most to least active)</span>' +
+          '<span class="pred-summary__a">' +
+          ranking +
+          "</span></li>" +
+          '<li><span class="pred-summary__q">Banana compared with background</span>' +
+          '<span class="pred-summary__a">' +
+          OPTS_BANANA[selects["pBanana"]] +
+          "</span></li>" +
+          '<li><span class="pred-summary__q">Two groups measuring the same sample</span>' +
+          '<span class="pred-summary__a">' +
+          OPTS_GROUPS[selects["pGroups"]] +
+          "</span></li>";
+        document.getElementById("summary2").classList.add("show");
+      }
+    </script>
+  </body>
+</html>

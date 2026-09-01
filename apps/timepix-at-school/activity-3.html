@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 3 | TIMEPIX@school</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/worksheet.css" />
+  </head>
+  <body class="ws">
+    <div class="ws-bar">
+      <div class="ws-bar__inner">
+        <span class="ws-bar__brand">
+          <a href="index.html" aria-label="Home"
+            ><img
+              src="assets/timepix-logo.svg"
+              alt="TIMEPIX@school"
+              onerror="this.style.display = 'none'"
+          /></a>
+          Seeing the Invisible
+        </span>
+        <span class="ws-bar__actions">
+          <a class="ws-back" href="index.html">Back to the lesson</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="sheet">
+      <div class="sheet__head">
+        <img
+          src="assets/balloon.png"
+          alt="Activity 3 illustration"
+          class="sheet__hero-img"
+          onerror="this.style.display = 'none'"
+        />
+        <p class="sheet__eyebrow">Activity 3</p>
+        <h1>Radon in the air, captured with a balloon</h1>
+        <p class="sheet__sub">
+          Predict first, then observe, then explain. Lock in your predictions
+          before the balloon goes near the detector.
+        </p>
+      </div>
+
+      <div class="idrow">
+        <label>Name <input type="text" /></label>
+        <label>Partner(s) <input type="text" /></label>
+        <label>Date <input type="text" /></label>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--predict"
+          >Predict, before you start</span
+        >
+        <h2>Two questions about the air and the balloon</h2>
+
+        <p class="guide">
+          <strong>Question 1.</strong> Does ordinary indoor air contain anything
+          radioactive?
+        </p>
+        <div class="iradio-group" id="ir3a">
+          <label class="iradio"
+            ><input type="radio" name="ir3a" /> Yes, there is something
+            radioactive in the air</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir3a" /> No, air is just nitrogen and
+            oxygen</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir3a" /> I have no idea</label
+          >
+        </div>
+
+        <p class="guide" style="margin-top: 20px">
+          <strong>Question 2.</strong> After the charged balloon is placed under
+          the detector, the count over the next 100 minutes will...
+        </p>
+        <div class="iradio-group" id="ir3b">
+          <label class="iradio"
+            ><input type="radio" name="ir3b" /> Rise over time</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir3b" /> Stay about the same</label
+          >
+          <label class="iradio"
+            ><input type="radio" name="ir3b" /> Fall over time</label
+          >
+        </div>
+
+        <p class="guide" style="margin-top: 16px">
+          Write your reasoning for Question 2.
+        </p>
+        <textarea rows="3"></textarea>
+
+        <button class="pred-lock-btn" id="lock3" style="margin-top: 16px">
+          Lock in my predictions
+        </button>
+        <p class="pred-confirmed" id="conf3">
+          Predictions locked. You will find out at the bench.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--observe">Observe</span>
+        <h2>Record your alpha counts</h2>
+        <p class="guide">
+          Count alpha particles only. For each 10-minute sample record the
+          count in the second column. The activity in becquerels will calculate
+          automatically.
+        </p>
+
+        <table class="ws-table" id="decayTable">
+          <thead>
+            <tr>
+              <th>Time (s)</th>
+              <th>Alpha particles counted</th>
+              <th>Activity (Bq)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fixed">0</td>
+              <td><input type="number" class="count-input" data-row="0" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="0" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">600</td>
+              <td><input type="number" class="count-input" data-row="1" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="1" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">1200</td>
+              <td><input type="number" class="count-input" data-row="2" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="2" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">1800</td>
+              <td><input type="number" class="count-input" data-row="3" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="3" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">2400</td>
+              <td><input type="number" class="count-input" data-row="4" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="4" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">3000</td>
+              <td><input type="number" class="count-input" data-row="5" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="5" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">3600</td>
+              <td><input type="number" class="count-input" data-row="6" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="6" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">4200</td>
+              <td><input type="number" class="count-input" data-row="7" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="7" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">4800</td>
+              <td><input type="number" class="count-input" data-row="8" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="8" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">5400</td>
+              <td><input type="number" class="count-input" data-row="9" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="9" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+            <tr>
+              <td class="fixed">6000</td>
+              <td><input type="number" class="count-input" data-row="10" min="0" step="1" placeholder="0"></td>
+              <td><input type="text" class="activity-output" data-row="10" readonly tabindex="-1" style="background:#f0faf9;color:#0e6b69;font-weight:700;cursor:default;"></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="guide" style="margin-top: 16px">
+          Sketch or describe the shape of your activity-vs-time graph.
+        </p>
+        <textarea rows="4"></textarea>
+      </div>
+
+      <div class="step">
+        <span class="step__tag step__tag--explain">Explain</span>
+        <h2>What does it mean?</h2>
+        <p class="guide">
+          Did the count fall over time? What does a decreasing count tell you
+          about what was stuck to the balloon? The half-life of the decay
+          products you collected is roughly 50 minutes. Does your graph agree?
+          Explain any differences.
+        </p>
+        <textarea rows="6"></textarea>
+      </div>
+
+      <div class="pred-summary" id="summary3">
+        <h4>Your predictions</h4>
+        <ul class="pred-summary__list" id="summaryList3"></ul>
+        <p class="pred-summary__note">
+          Keep these in mind when the balloon goes near the detector.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll(".iradio").forEach((label) => {
+        label.addEventListener("click", () => {
+          const name = label.querySelector("input").name;
+          document
+            .querySelectorAll('.iradio input[name="' + name + '"]')
+            .forEach((inp) => {
+              inp.closest(".iradio").classList.remove("selected");
+            });
+          label.classList.add("selected");
+        });
+      });
+
+      document.getElementById("lock3").addEventListener("click", function () {
+        this.disabled = true;
+        document.querySelectorAll(".iradio").forEach((l) => {
+          if (!l.classList.contains("selected")) l.style.opacity = ".4";
+          l.style.pointerEvents = "none";
+        });
+        document.getElementById("conf3").classList.add("show");
+
+        const a1 = document.querySelector('.iradio input[name="ir3a"]:checked');
+        const a2 = document.querySelector('.iradio input[name="ir3b"]:checked');
+        const ul = document.getElementById("summaryList3");
+        ul.innerHTML =
+          '<li><span class="pred-summary__q">Does indoor air contain something radioactive?</span>' +
+          '<span class="pred-summary__a">' +
+          (a1 ? a1.closest(".iradio").textContent.trim() : "No answer") +
+          "</span></li>" +
+          '<li><span class="pred-summary__q">Count over the next 100 minutes will...</span>' +
+          '<span class="pred-summary__a">' +
+          (a2 ? a2.closest(".iradio").textContent.trim() : "No answer") +
+          "</span></li>";
+        document.getElementById("summary3").classList.add("show");
+      });
+    </script>
+
+    <script>
+      // Auto-calculate Activity = count / 600
+      document.querySelectorAll('.count-input').forEach(input => {
+        input.addEventListener('input', () => {
+          const row = input.dataset.row;
+          const output = document.querySelector('.activity-output[data-row="' + row + '"]');
+          const val = parseFloat(input.value);
+          if (!isNaN(val) && val >= 0) {
+            output.value = (val / 600).toFixed(4);
+          } else {
+            output.value = '';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
