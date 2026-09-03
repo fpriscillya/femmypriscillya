@@ -259,6 +259,11 @@ h1 {
   flex-wrap: wrap;
 }
 
+.cta-row .btn {
+  min-width: 200px;
+  justify-content: center;
+}
+
 /* ---- disciplines ---- */
 .disciplines {
   border-top: 1px solid var(--line);
