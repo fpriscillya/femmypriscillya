@@ -76,7 +76,7 @@
 
   var GAP = 72,
     JITTER = 0,
-    INK = "rgba(38,38,38,0.12)";
+    INK = "rgba(38,38,38,0.09)";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ctx,
     W,
