@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap");
 /* ============================================================
    Femmy Priscillya — portfolio
    One stylesheet for every page.
@@ -46,12 +47,12 @@ img {
 
 /* ---- shared small type ---- */
 .eyebrow {
-  font-family: "Jost", sans-serif;
-  font-weight: 500;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
   font-size: 12px;
-  letter-spacing: 0.22em;
+  letter-spacing: 1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 /* ---- header ---- */
@@ -405,6 +406,8 @@ h1 {
 }
 .page-head .eyebrow {
   margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 12px;
 }
 .page-head h1 {
   font-size: clamp(34px, 5vw, 56px);
